@@ -24,9 +24,15 @@ import { useCollectionData } from 'react-firebase-hooks/firestore';
   const firestore = firebase.firestore();
 
 function App() {
+
+  const [user] = useAuthState(auth);
+
   return (
     <div className="App">
       
+      <section>
+         {user ? <LiveChat /> : <SignIn />}
+      </section>
     </div>
   );
 }
