@@ -6,6 +6,8 @@ import 'firebase/auth';
 
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
+import LiveChat from './Pages/LiveChat';
+import SignIn from './Pages/SignIn';
 
   // initialize firebase to identify project
   //const app = initializeApp(firebaseConfig);
@@ -31,7 +33,7 @@ function App() {
     <div className="App">
       
       <section>
-         {user ? <LiveChat /> : <SignIn />}
+         {user ? <LiveChat firestore={firestore} /> : <SignIn auth={auth} />}
       </section>
     </div>
   );
