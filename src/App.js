@@ -20,7 +20,7 @@ const App = () => {
         </Routes>
       </Router>
       <header>
-        <h1>HI</h1>
+        <h1></h1>
       </header>
 
       <section>
