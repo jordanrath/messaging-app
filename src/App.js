@@ -1,17 +1,17 @@
 import React from 'react';
-import firebase from 'firebase/app'
-import 'firebase/firestore';
-import 'firebase/auth';
-//import { initializeApp } from "firebase/app";
-
+//import firebase from 'firebase/app'
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
+import { getAnalytics } from "firebase/analytics";
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { useCollectionData } from 'react-firebase-hooks/firestore';
+import { getAuth } from "firebase/auth"
 import LiveChat from './Pages/LiveChat';
 import SignIn from './Pages/SignIn';
+import SignOut from './Pages/SignOut';
 
   // initialize firebase to identify project
   //const app = initializeApp(firebaseConfig);
-  firebase.initializeApp({
+ const firebaseConfig = {
     apiKey: "AIzaSyC847dX9g3U1a88CHzMirwDVo4C7MS5KV4",
     authDomain: "chat-app-c682a.firebaseapp.com",
     projectId: "chat-app-c682a",
@@ -19,11 +19,21 @@ import SignIn from './Pages/SignIn';
     messagingSenderId: "689858703146",
     appId: "1:689858703146:web:a22f62d9490964d7e37853",
     measurementId: "G-5P482JG917"
-  });
+  };
+
+  // initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  // Initialize Cloud Firestore
+  const db = getFirestore(app);
+
+  // Initialize Analytics
+  const analytics = getAnalytics(app);
 
   // create reference to auth and firestore SDK's
-  const auth = firebase.auth();
-  const firestore = firebase.firestore();
+  // Initialize Firebase Authentication and get a reference to the service
+  const auth = getAuth(app);
+  const firestore = app.firestore();
 
 function App() {
 
@@ -31,7 +41,11 @@ function App() {
 
   return (
     <div className="App">
-      
+      <header>
+        <h1>HI</h1>
+        <SignOut />
+      </header>
+
       <section>
          {user ? <LiveChat firestore={firestore} /> : <SignIn auth={auth} />}
       </section>
