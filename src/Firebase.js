@@ -37,6 +37,7 @@ import {
   const auth = getAuth(app);
   const db = getFirestore(app);
   const analytics = getAnalytics(app);
+  console.log(analytics)
 
   const googleProvider = new GoogleAuthProvider();
 

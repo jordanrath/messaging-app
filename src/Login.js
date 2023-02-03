@@ -10,7 +10,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -19,7 +19,7 @@ const Login = () => {
             return;
         }
         if (user) navigate("/dashboard");
-    }, [user, loading]);
+    }, [user, loading, navigate]);
 
   return (
     <div className='login'>

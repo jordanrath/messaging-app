@@ -19,10 +19,6 @@ const App = () => {
           <Route exact path="/dashboard" element={<Dashboard />} />
         </Routes>
       </Router>
-      <header>
-        <h1></h1>
-      </header>
-
       <section>
          {/* {user ? <LiveChat firestore={firestore} /> : <SignIn auth={auth} />} */}
       </section>
