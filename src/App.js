@@ -3,8 +3,8 @@ import React from 'react';
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAnalytics } from "firebase/analytics";
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { getAuth } from "firebase/auth"
+// import { useAuthState } from 'react-firebase-hooks/auth';
+import { getAuth, onAuthStateChanged } from "firebase/auth"
 import LiveChat from './Pages/LiveChat';
 import SignIn from './Pages/SignIn';
 import SignOut from './Pages/SignOut';
@@ -29,7 +29,7 @@ import SignOut from './Pages/SignOut';
 
   // Initialize Analytics
   const analytics = getAnalytics(app);
-
+  console.log(db, analytics)
   // create reference to auth and firestore SDK's
   // Initialize Firebase Authentication and get a reference to the service
   const auth = getAuth(app);
@@ -37,7 +37,15 @@ import SignOut from './Pages/SignOut';
 
 function App() {
 
-  const [user] = useAuthState(auth);
+  //const [user] = useAuthState(auth);
+  const [user] = onAuthStateChanged(auth);
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+        const uid = user.uid;
+    } else {
+      //user is signed out
+    }
+  });
 
   return (
     <div className="App">

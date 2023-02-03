@@ -1,7 +1,7 @@
 import React from 'react'
 
 const LiveMessage = (props) => {
-    const { text, userId } = props.message
+    const { text, uid } = props.message
 
   return (
     <div>{text}</div>

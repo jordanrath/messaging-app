@@ -1,5 +1,5 @@
 import React from 'react'
-import { useCollectionData } from 'react-firebase-hooks/firestore';
+// import { useCollectionData } from 'react-firebase-hooks/firestore';
 import LiveMessage from './LiveMessage';
 
 const LiveChat = (props) => {
@@ -9,11 +9,11 @@ const LiveChat = (props) => {
     const query = messageRef.orderBy('createdAt').limit(25);
 
     // make query and listen for updates
-    const [messages] = useCollectionData(query, {idField: 'id'});
+    //const [messages] = useCollectionData(query, {idField: 'id'});
 
   return (
     <div>
-        {messages && messages.map(msg => <LiveMessage key={msg.id} message={msg} />)}
+        {/* {messages && messages.map(msg => <LiveMessage key={msg.id} message={msg} />)} */}
 
 
     </div>
