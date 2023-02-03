@@ -8,7 +8,7 @@ import {
      createUserWithEmailAndPassword,
      sendPasswordResetEmail,
      signOut,
-    } from "firebase/auth";
+} from "firebase/auth";
 import {
      getFirestore,
      query,
@@ -16,7 +16,7 @@ import {
      collection,
      where,
      addDoc,
-    } from "firebase/firestore";
+} from "firebase/firestore";
 
   // initialize firebase to identify project
   const firebaseConfig = {
