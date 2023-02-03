@@ -1,21 +1,22 @@
+import { getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
-​​import {
-​​  GoogleAuthProvider,
-​​  getAuth,
-​​  signInWithPopup,
-​​  signInWithEmailAndPassword,
-​​  createUserWithEmailAndPassword,
-​​  sendPasswordResetEmail,
-​​  signOut,
-​​} from "firebase/auth";
-​​import {
-​​  getFirestore,
-​​  query,
-​​  getDocs,
-​​  collection,
-​​  where,
-​​  addDoc,
-​​} from "firebase/firestore";
+import {
+     GoogleAuthProvider,
+     getAuth,
+     signInWithPopup,
+     signInWithEmailAndPassword,
+     createUserWithEmailAndPassword,
+     sendPasswordResetEmail,
+     signOut,
+    } from "firebase/auth";
+import {
+     getFirestore,
+     query,
+     getDocs,
+     collection,
+     where,
+     addDoc,
+    } from "firebase/firestore";
 
   // initialize firebase to identify project
   const firebaseConfig = {
@@ -60,7 +61,17 @@ import { initializeApp } from "firebase/app";
     }
   };
 
-  // create a function to let a user log in with email and password
+  // create a function to log in with email and password
+  const logInWithEmailAndPassword = async (email, password) => {
+    try {
+        await signInWithEmailAndPassword(auth, email, password);
+    } catch (err) {
+        console.error(err);
+        alert(err.message);
+    }
+  };
+
+  // create a function to register with email and password
   const registerWithEmailAndPassword = async (name, email, password) => {
     try {
         const res = await createUserWithEmailAndPassword(auth, email, password);
@@ -92,4 +103,14 @@ import { initializeApp } from "firebase/app";
   const logout = () => {
     signOut(auth);
   };
-  
+
+  // export all the functions
+  export {
+    auth,
+    db,
+    signInWithGoogle,
+    logInWithEmailAndPassword,
+    registerWithEmailAndPassword,
+    sendPasswordReset,
+    logout,
+  };
