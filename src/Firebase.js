@@ -68,7 +68,7 @@ import {
         await signInWithEmailAndPassword(auth, email, password);
     } catch (err) {
         console.error(err);
-        alert(err.message);
+        alert("Incorrect username or password.");
     }
   };
 
@@ -96,7 +96,7 @@ import {
         alert("Password reset link has been sent, check your inbox!");
     } catch (err) {
         console.error(err);
-        alert(err.message);
+        alert("Oops... there was an error.");
     }
   };
 

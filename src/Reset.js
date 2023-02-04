@@ -26,7 +26,7 @@ const Reset = () => {
             />
             <button 
                 className='reset__btn'
-                onClick={sendPasswordReset}
+                onClick={() => sendPasswordReset(email)}
             >
                 Send password reset email
             </button>
