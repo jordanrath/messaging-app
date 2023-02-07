@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react'
-import ChatMessage from './ChatMessage';
+import SendMessage from './SendMessage';
 import { auth, collection, addDoc, db } from './Firebase';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import { FieldValue, getDocs, query } from 'firebase/firestore';

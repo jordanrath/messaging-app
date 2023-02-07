@@ -5,6 +5,7 @@ import Dashboard from './Dashboard';
 import Login from './Login';
 import Register from './Register';
 import Reset from './Reset';
+import SendMessage from './SendMessage';
 
 
 const App = () => {
@@ -17,7 +18,7 @@ const App = () => {
           <Route exact path="/" element={<Login />}/>
           <Route exact path="/register" element={<Register />} />
           <Route exact path="/reset" element={<Reset />} />
-          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/dashboard" element={<SendMessage />} />
         </Routes>
       </Router>
       <section>
