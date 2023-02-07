@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Chatroom from './Chatroom';
-import Dashboard from './Dashboard';
-import Login from './Login';
-import Register from './Register';
-import Reset from './Reset';
-import SendMessage from './SendMessage';
+import Chatroom from './Components/ChatRoom';
+import Dashboard from './Components/Dashboard';
+import Login from './Components/Login';
+import Register from './Components/Register';
+import Reset from './Components/Reset';
+import SendMessage from './Components/SendMessage';
 
 
 const App = () => {

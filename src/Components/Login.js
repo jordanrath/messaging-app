@@ -4,7 +4,7 @@ import {
     auth, 
     logInWithEmailAndPassword, 
     signInWithGoogle 
-} from './Firebase';
+} from '../Firebase';
 import { useAuthState } from "react-firebase-hooks/auth";
 
 const Login = () => {

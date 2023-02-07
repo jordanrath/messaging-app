@@ -6,7 +6,7 @@ import {
   orderBy,
   onSnapshot,
 } from 'firebase/firestore';
-import { db } from './Firebase';
+import { db } from '../Firebase';
 import Message from './Message';
 import SendMessage from './SendMessage';
 
