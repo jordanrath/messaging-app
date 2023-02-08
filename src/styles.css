@@ -1,3 +1,10 @@
+:root {
+  --primary: #0E2431;
+  --secondary: #4070F4;
+  --secondary-dark: #3665EB;
+  --gray: #666;
+}
+
 *,
 *:before,
 *:after {
@@ -358,11 +365,11 @@ body {
   margin-top: .5rem;
 }
 
-.modal-btns {
+.modal__btns {
   height: 30%;
 }
 
-.modal-btns button {
+.modal__btns button {
   width: 50%;
   height: 100%;
   background: var(--secondary);
@@ -373,7 +380,7 @@ body {
   cursor: pointer;
 }
 
-.confirm-btns button:hover {
+.modal__btns button:hover {
   background: var(--secondary-dark);
 }
 
@@ -388,11 +395,11 @@ body {
   z-index: 10;
 }
 
-.confirm.show + .overlay {
+.open.modal__open + .overlay {
   display: block;
 }
 
-.button {
+.modal__btn {
   background: var(--secondary);
   color: #fff;
   font-size: 20px;

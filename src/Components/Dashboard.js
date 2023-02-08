@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
 import { auth, db, logout } from "../Firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
+import Modal from "./Modal";
 
 
 const Dashboard = () => {
@@ -31,8 +32,11 @@ const Dashboard = () => {
       }, [user, loading, navigate]);
 
   return (
+    <>
     <div className="dashboard">
+      <Modal />
       <div className="dashboard__container">
+        
         <h1>Welcome to your Account {name}</h1>
         <div>You're currently logged in as {user?.email}.</div>
         <button className="dashboard__btn" onClick={() => navigate('/chatroom')}>
@@ -46,6 +50,11 @@ const Dashboard = () => {
         </button>
       </div>
     </div>
+    <div 
+      className='overlay'
+      // onClick={() => {handleOpenedModal(false)}}
+    />
+    </>
   )
 }
 

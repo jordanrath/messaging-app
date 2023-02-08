@@ -1,6 +1,7 @@
 import React from 'react'
 
 const OpenedModal = ({ text, open, handleOpenedModal }) => {
+
   return (
     <>
         <div className={open ? 'open modal__open' : 'open'}>
@@ -12,14 +13,14 @@ const OpenedModal = ({ text, open, handleOpenedModal }) => {
                 </div>
             </div>
             <div className='modal__btns'>
-                <button onClick={() => handleOpenedModal(true)}>BACK TO CHAT</button>
-                <button onClick={() => handleOpenedModal(false)}>LOGOUT/SOMETHING ELSE</button>
+                <button onClick={() => handleOpenedModal(true)}>CHAT</button>
+                <button onClick={() => handleOpenedModal(false)}>LOGOUT</button>
             </div>
         </div>
-        <div
+        {/* <div
             className='overlay'
             onClick={handleOpenedModal(false)}
-        />
+        /> */}
     </>
   )
 }
