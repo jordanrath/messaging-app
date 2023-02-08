@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import { auth, db } from '../Firebase';
+import { db } from '../Firebase';
 import { addDoc, collection } from '../Firebase';
 import { serverTimestamp } from 'firebase/firestore';
-import { getAuth } from 'firebase/auth';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 const SendMessage = () => {
   const [message, setMessage] = useState("");
@@ -13,16 +13,46 @@ const SendMessage = () => {
       alert("Enter a valid message");
       return;
     }
-    const { uid, displayName, photoURL } = auth.currentUser;
-    await addDoc(collection(db, "messages"), {
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+    // const { uid, displayName, photoURL } = auth.currentUser;
+    // await 
+    if(user) {
+    addDoc(collection(db, "messages"), {
       text: message,
-      name: displayName,
-      avatar: photoURL,
+      name: user.displayName,
+      avatar: user.photoURL,
       createdAt: serverTimestamp(),
-      uid,
+      uid: user.uid,
     });
     setMessage("");
+  } else {
+    console.log('no user')
   }
+  }) }
+
+    return (
+      <form onSubmit={(e) => sendMessage(e)} className='send-message'>
+        <label htmlFor='messageInput' hidden>
+          Enter Message
+        </label>
+        <input
+          id='messageInput'
+          name='messageInput'
+          type='text'
+          className='form-input__input'
+          placeholder='type a message...'
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
+          autoComplete="off"
+        />
+        <button type='submit'>Send</button>
+      </form>
+    )
+  }
+
+export default SendMessage;
+
 
   // *************could also impliment a try catch
   // const sendMessage = async (e) => {
@@ -47,24 +77,3 @@ const SendMessage = () => {
   //   }
   // }
   
-    return (
-      <form onSubmit={(e) => sendMessage(e)} className='send-message'>
-        <label htmlFor='messageInput' hidden>
-          Enter Message
-        </label>
-        <input
-          id='messageInput'
-          name='messageInput'
-          type='text'
-          className='form-input__input'
-          placeholder='type a message...'
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          autoComplete="off"
-        />
-        <button type='submit'>Send</button>
-      </form>
-    )
-  }
-
-export default SendMessage;

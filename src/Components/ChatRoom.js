@@ -35,7 +35,7 @@ const ChatRoom = () => {
         <Dashboard />
         <div className='message-wrapper'>
           {messages?.map((message) => (
-            <Message key={message.id} message={message}  />
+            <Message key={message.id} message={message} />
           ))}
         </div>
         <SendMessage />
