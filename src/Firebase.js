@@ -16,7 +16,6 @@ import {
      collection,
      where,
      addDoc,
-     FieldValue,
 } from "firebase/firestore";
 
   // initialize firebase to identify project
@@ -76,7 +75,7 @@ import {
   // create a function to register with email and password
   const registerWithEmailAndPassword = async (name, email, password) => {
     try {
-        const res = await createUserWithEmailAndPassword(auth, email, password);
+        const res = await createUserWithEmailAndPassword(auth, email, password, name);
         const user = res.user;
         await addDoc(collection(db, "users"), {
             uid: user.uid,

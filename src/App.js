@@ -8,7 +8,6 @@ import Reset from './Components/Reset';
 
 const App = () => {
 
-
   return (
     <div className="app">
       <Router>
@@ -24,6 +23,6 @@ const App = () => {
       </section>
     </div>
   );
-}
+};
 
 export default App;
