@@ -13,6 +13,7 @@ import SendMessage from './SendMessage';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
+import Dashboard from './Dashboard';
 
 const ChatRoom = () => {
   const [messages, setMessages] = useState([]);
@@ -35,21 +36,9 @@ const ChatRoom = () => {
     return () => unsubscribe;
   });
 
-  const logout = () => {
-    signOut(auth);
-    navigate('/')
-  }
-
     return (
       <main className='chat-box'>
-        <div>
-        Logged in as
-        <div>{user?.displayName}</div>
-        <div>{user?.email}</div>
-        <button className="dashboard__btn" onClick={logout}>
-          Logout
-        </button>
-        </div>
+        <Dashboard />
         <div className='message-wrapper'>
           {messages?.map((message) => (
             <Message key={message.id} message={message} />
