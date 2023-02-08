@@ -1,8 +1,10 @@
-:root {
+#root {
   --primary: #0E2431;
   --secondary: #4070F4;
   --secondary-dark: #3665EB;
   --gray: #666;
+  width: 100vw;
+  height: 100vh;
 }
 
 *,
@@ -187,13 +189,22 @@ input,
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   background-color: #dcdcdc;
 }
+
+.dashboard h2 {
+  display: inherit;
+  justify-content: flex-start;
+  width: 100%;
+  padding-left: 20px;
+}
+
 .dashboard__container {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   width: 80%;
   height: 80%;
   text-align: center;
@@ -206,14 +217,27 @@ input,
   padding: 10px;
   font-size: 18px;
   margin-top: 10px;
+  width: 100%;
+  height: 100%;
   border: none;
   border-radius: 6px;
   color: white;
-  background-color: black;
+  background-color: #282828;
   cursor: pointer;
 }
+
+.dashboard__btn:hover {
+  background-color: #404040;
+}
+
 .dashboard div {
   margin-top: 7px;
+}
+
+.dashboard__box {
+  display: inherit;
+  width: 50%;
+  height: 15%;
 }
 
 /* ---------------Chat Room Styles--------------- */
@@ -316,10 +340,11 @@ body {
   width: 360px;
   height: 280px;
   background: #fff;
+  border-radius: 6px;
   transition: .6s;
   z-index: 100;
   position: absolute;
-  top: -280px;
+  top: -310px;
   left: calc(50% - 180px);
 }
 
@@ -380,9 +405,24 @@ body {
   cursor: pointer;
 }
 
-.modal__btns button:hover {
-  background: var(--secondary-dark);
+.modal__btns .left {
+  border-bottom-left-radius: 6px;
+  background: var(--secondary)
 }
+
+.modal__btns .right {
+  border-bottom-right-radius: 6px;
+  background: var(--secondary-dark)
+}
+
+.modal__btns .left:hover {
+  background: var(--primary);
+}
+
+.modal__btns .right:hover {
+  background: var(--primary);
+}
+
 
 .overlay {
   width: 100vw;

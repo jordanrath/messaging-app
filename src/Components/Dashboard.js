@@ -34,20 +34,27 @@ const Dashboard = () => {
   return (
     <>
     <div className="dashboard">
-      <Modal />
+      <h2>Welcome to your Account {name}</h2>
       <div className="dashboard__container">
-        
-        <h1>Welcome to your Account {name}</h1>
-        <div>You're currently logged in as {user?.email}.</div>
-        <button className="dashboard__btn" onClick={() => navigate('/chatroom')}>
-          Chat Room
-        </button>
-        <button className="dashboard__btn" onClick={() => navigate('/reset')}>
-          Reset Password
-        </button>
-        <button className="dashboard__btn" onClick={logout}>
-          Logout
-        </button>
+        <div className="dashboard__box account-info">
+          <Modal title='Account Info' name={name} email={user?.email} />
+        </div> 
+        {/* <div>You're currently logged in as {user?.email}.</div> */}
+        <div className="dashboard__box account-info">
+          <button className="dashboard__btn" onClick={() => navigate('/chatroom')}>
+            Chat Room
+          </button>
+        </div>
+        <div className="dashboard__box security">
+          <button className="dashboard__btn" onClick={() => navigate('/reset')}>
+            Reset Password
+          </button>
+        </div>
+        <div className="dashboard__box chatroom">
+          <button className="dashboard__btn" onClick={logout}>
+            Logout
+          </button>
+        </div>
       </div>
     </div>
     <div 

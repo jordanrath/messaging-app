@@ -1,20 +1,22 @@
 import React from 'react'
+import { logout } from "../Firebase";
 
-const OpenedModal = ({ text, open, handleOpenedModal }) => {
+const OpenedModal = ({ text, open, handleOpenedModal, title, name, email }) => {
 
   return (
     <>
         <div className={open ? 'open modal__open' : 'open'}>
             <div className='modal__content'>
-                <h4>Test Header</h4>
+                <h4>{title}</h4>
                 <div>
-                    <h2>{text}</h2>
-                    <p>Test paragraph</p>
+                    {/* <h2>{title}</h2> */}
+                    <p>Username: {name}</p>
+                    <p>Email: {email}</p>
                 </div>
             </div>
             <div className='modal__btns'>
-                <button onClick={() => handleOpenedModal(true)}>CHAT</button>
-                <button onClick={() => handleOpenedModal(false)}>LOGOUT</button>
+                <button className="left" onClick={() => handleOpenedModal(true)}>DASHBOARD</button>
+                <button className="right" onClick={logout}>LOGOUT</button>
             </div>
         </div>
         {/* <div

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import OpenedModal from './OpenedModal';
 
-const Modal = () => {
+const Modal = ({ title, name, email }) => {
     const [open, setOpen] = useState(false);
 
-    const handleOpenedModal = result => {
-        if (result) {
+    const handleOpenedModal = event => {
+        if (event) {
             console.log('some click');
         } 
             
@@ -14,10 +14,13 @@ const Modal = () => {
 
   return (
     <>
-        <button className='modal__btn' onClick={() => setOpen(true)}>
-            OPEN
+        <button className='dashboard__btn' onClick={() => setOpen(true)}>
+            Account Info
         </button>
-        <OpenedModal 
+        <OpenedModal
+            title={title}
+            name={name}
+            email={email}
             text={'Example Text'}
             open={open}
             handleOpenedModal={handleOpenedModal}
