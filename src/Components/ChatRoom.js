@@ -13,6 +13,7 @@ import Dashboard from './Dashboard';
 
 const ChatRoom = () => {
   const [messages, setMessages] = useState([]);
+  const userQ = query(collection(db, "users"));
 
   useEffect(() => {
     const q = query(
@@ -35,7 +36,7 @@ const ChatRoom = () => {
         <Dashboard />
         <div className='message-wrapper'>
           {messages?.map((message) => (
-            <Message key={message.id} message={message} />
+            <Message key={message.id} message={message} users={userQ} />
           ))}
         </div>
         <SendMessage />
