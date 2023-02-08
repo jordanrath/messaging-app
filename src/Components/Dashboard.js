@@ -31,13 +31,20 @@ const Dashboard = () => {
       }, [user, loading, navigate]);
 
   return (
-    <div className="dashboard__container">
-      Logged in as
-      <div>{name}</div>
-      <div>{user?.email}</div>
-      <button className="dashboard__btn" onClick={logout}>
-        Logout
-      </button>
+    <div className="dashboard">
+      <div className="dashboard__container">
+        <h1>Welcome to your Account {name}</h1>
+        <div>You're currently logged in as {user?.email}.</div>
+        <button className="dashboard__btn" onClick={() => navigate('/chatroom')}>
+          Chat Room
+        </button>
+        <button className="dashboard__btn" onClick={() => navigate('/reset')}>
+          Reset Password
+        </button>
+        <button className="dashboard__btn" onClick={logout}>
+          Logout
+        </button>
+      </div>
     </div>
   )
 }

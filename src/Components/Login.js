@@ -18,7 +18,7 @@ const Login = () => {
             //trigger custom loading screen
             return;
         }
-        if (user) navigate("/dashboard");
+        if (user) navigate("/chatroom");
     }, [user, loading, navigate]);
 
   return (

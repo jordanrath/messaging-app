@@ -9,7 +9,9 @@ import {
 import { db } from '../Firebase';
 import Message from './Message';
 import SendMessage from './SendMessage';
-import Dashboard from './Dashboard';
+import { Link } from 'react-router-dom';
+import Menu from './Menu';
+import Reset from './Reset';
 
 const ChatRoom = () => {
   const [messages, setMessages] = useState([]);
@@ -31,15 +33,17 @@ const ChatRoom = () => {
   });
 
     return (
-      <main className='chat-box'>
-        <Dashboard />
-        <div className='message-wrapper'>
-          {messages?.map((message) => (
-            <Message key={message.id} message={message} />
-          ))}
-        </div>
-        <SendMessage />
-      </main>
+      <div className='chatroom'>
+        <Menu />
+        <main className='chat-box'>
+          <div className='message-wrapper'>
+            {messages?.map((message) => (
+              <Message key={message.id} message={message} />
+            ))}
+          </div>
+          <SendMessage />
+        </main>
+      </div>
     )
   }
 
