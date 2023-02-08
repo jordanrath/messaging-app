@@ -6,19 +6,13 @@ import {
   orderBy,
   onSnapshot,
 } from 'firebase/firestore';
-import { auth, db } from '../Firebase';
+import { db } from '../Firebase';
 import Message from './Message';
 import SendMessage from './SendMessage';
-//import { logout } from '../Firebase';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import { useNavigate } from 'react-router-dom';
-import { signOut } from 'firebase/auth';
 import Dashboard from './Dashboard';
 
 const ChatRoom = () => {
   const [messages, setMessages] = useState([]);
-  const [user] = useAuthState(auth);
-  const navigate = useNavigate();
 
   useEffect(() => {
     const q = query(
