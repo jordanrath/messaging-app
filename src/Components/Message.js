@@ -2,9 +2,9 @@ import React from 'react'
 import { auth } from "../Firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
-const Message = ({ message, users }) => {
+const Message = ({ message }) => {
     const [user] = useAuthState(auth);
-
+    
   return (
     <div
         className={`chat-bubble ${message?.uid === user?.uid ? "right" : ""}`}
@@ -18,7 +18,7 @@ const Message = ({ message, users }) => {
             />
         }
         <div className='chat-bubble__right'>
-            <p className='user-name'>{message.name || users.name}</p>
+            <p className='user-name'>{message.name}</p>
             <p className='user-message'>{message.text}</p>
         </div>
     </div>
