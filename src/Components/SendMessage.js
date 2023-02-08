@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { db } from '../Firebase';
+import { auth, db } from '../Firebase';
 import { addDoc, collection } from '../Firebase';
 import { serverTimestamp } from 'firebase/firestore';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 const SendMessage = () => {
   const [message, setMessage] = useState("");
@@ -13,23 +12,16 @@ const SendMessage = () => {
       alert("Enter a valid message");
       return;
     }
-    const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-    // const { uid, displayName, photoURL } = auth.currentUser;
-    // await 
-    if(user) {
-    addDoc(collection(db, "messages"), {
+    const { uid, displayName, photoURL } = auth.currentUser;
+    await addDoc(collection(db, "messages"), {
       text: message,
-      name: user.displayName,
-      avatar: user.photoURL,
+      name: displayName,
+      avatar: photoURL,
       createdAt: serverTimestamp(),
-      uid: user.uid,
+      uid,
     });
     setMessage("");
-  } else {
-    console.log('no user')
   }
-  }) }
 
     return (
       <form onSubmit={(e) => sendMessage(e)} className='send-message'>
