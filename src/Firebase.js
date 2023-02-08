@@ -90,24 +90,6 @@ import {
     }
   };
 
-  // create a function to accept valid messages
-//   const liveChatMessages = async (e) => {
-//     const { uid, photoURL } = auth.currentUser;
-//     try {
-//         e.preventDefault();
-
-//         await addDoc(collection(db, "messages"), {
-//             text: formValue,
-//             createdAt: FieldValue.serverTimestamp(),
-//             uid,
-//             photoURL,
-//         });
-//     } catch (err) {
-//         console.error(err);
-//         alert("There has been an error with the message you just tried to send.")
-//     }
-//   }
-
   // create a function to send a password reset link to an email address
   const sendPasswordReset = async (email) => {
     try {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { auth } from "../firebase";
+import { auth } from "../Firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 
 const Message = ({ message }) => {
@@ -7,7 +7,7 @@ const Message = ({ message }) => {
 
   return (
     <div
-        className={`chat-bubble ${message.uid === user.uid ? "right" : ""}`}
+        className={`chat-bubble ${message?.uid === user?.uid ? "right" : ""}`}
     >
         <img
             className='chat-bubble__left'

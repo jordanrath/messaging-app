@@ -1,0 +1,22 @@
+import { signOut } from 'firebase/auth';
+import React from 'react'
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../Firebase';
+
+const Logout = () => {
+    const navigate = useNavigate();
+
+    const logout = () => {
+        signOut(auth);
+        navigate("/");
+    }
+    logout();
+
+  return (
+    <>
+        <Logout/>
+    </>
+  )
+};
+
+export default Logout;

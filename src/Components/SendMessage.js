@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { auth, db } from '../Firebase';
-import { addDoc, collection, serverTimestamp } from '../Firebase';
+import { addDoc, collection } from '../Firebase';
+import { serverTimestamp } from 'firebase/firestore';
 
 const SendMessage = () => {
   const [message, setMessage] = useState("");
