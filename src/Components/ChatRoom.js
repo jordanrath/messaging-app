@@ -9,9 +9,7 @@ import {
 import { db } from '../Firebase';
 import Message from './Message';
 import SendMessage from './SendMessage';
-import { Link } from 'react-router-dom';
 import Menu from './Menu';
-import Reset from './Reset';
 
 const ChatRoom = () => {
   const [messages, setMessages] = useState([]);

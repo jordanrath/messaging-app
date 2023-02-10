@@ -15,6 +15,9 @@ const Modal = ({ title, name, email }) => {
   return (
     <>
         <button className='dashboard__btn' onClick={() => setOpen(true)}>
+        <span className="material-symbols-outlined">
+            account_circle
+        </span>
             Account Info
         </button>
         <OpenedModal

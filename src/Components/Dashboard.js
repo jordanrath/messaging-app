@@ -5,7 +5,6 @@ import { auth, db, logout } from "../Firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import Modal from "./Modal";
 
-
 const Dashboard = () => {
     const [user, loading] = useAuthState(auth);
     const [name, setName] = useState("");
@@ -36,25 +35,24 @@ const Dashboard = () => {
     <div className="dashboard">
       <h2>Welcome to your Account {name}</h2>
       <div className="dashboard__container">
-        <div className="dashboard__box account-info">
           <Modal title='Account Info' name={name} email={user?.email} />
-        </div> 
-        {/* <div>You're currently logged in as {user?.email}.</div> */}
-        <div className="dashboard__box account-info">
-          <button className="dashboard__btn" onClick={() => navigate('/chatroom')}>
-            Chat Room
-          </button>
-        </div>
-        <div className="dashboard__box security">
-          <button className="dashboard__btn" onClick={() => navigate('/reset')}>
-            Reset Password
-          </button>
-        </div>
-        <div className="dashboard__box chatroom">
-          <button className="dashboard__btn" onClick={logout}>
-            Logout
-          </button>
-        </div>
+          {/* <div>You're currently logged in as {user?.email}.</div> */}
+        <button className="dashboard__btn" onClick={() => navigate('/chatroom')}>
+          <span className="material-symbols-outlined">
+            chat
+          </span>
+          <h4>Chat Room</h4>
+        </button>
+        <button className="dashboard__btn" onClick={() => navigate('/reset')}>
+          <span className="material-symbols-outlined">
+            lock_reset
+          </span>
+          <h4>Reset Password</h4>
+        </button>
+       <button className="dashboard__btn" onClick={logout}>
+          <span className="material-symbols-outlined">logout</span>
+          <h4>Logout</h4>
+        </button>
       </div>
     </div>
     <div 
