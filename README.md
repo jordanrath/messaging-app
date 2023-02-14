@@ -1,1 +1,1 @@
-chat app
+Messaging app built with functional React components hooked up to a Firebase Database to store messages and current users.
