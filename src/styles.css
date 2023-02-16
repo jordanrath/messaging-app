@@ -20,7 +20,7 @@ body {
   max-width: 100vw;
   font-size: 16px;
   font-family: sans-serif;
-  background-color: #121212;
+  background-color: #181818;
 }
 
 /* --------------General & Icon Styles--------------- */
@@ -264,7 +264,23 @@ input,
 }
 
 /* ---------------Chat Room Styles--------------- */
+.app {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
 /* ---Chat Bubble Styles--- */
+.chatroom {
+  /* display: flex;
+  justify-content: center; */
+  width: 50%;
+  max-width: 1500px;
+  min-width: 350px;
+  height: 100%;
+  background-color: #121212;
+}
+
 .message-wrapper {
   padding: 40px 15px;
   margin-bottom: 60px;
@@ -311,7 +327,8 @@ input,
 .send-message {
   position: fixed;
   bottom: 0px;
-  width: 100%;
+  width: 50%;
+  min-width: 350px;
   padding: 20px 30px;
   background-color: #282828;
   display: flex;
