@@ -1,9 +1,20 @@
-import React from 'react'
+import { AuthContext } from 'firebase-react-hooks';
+import React, { useEffect, useState } from 'react'
 
-const AuthProvider = () => {
+// receive the children with access to context
+const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null);
+
+    // get user from firebase
+    useEffect(() => {
+      const currentUser = getUser();
+      setUser(currentUser);  
+    }, [])
+    
+
   return (
-    <div>AuthProvider</div>
-  )
-}
+    <AuthContext.Provider value={{ user }}>{children}</AuthContext.Provider>
+  );
+};
 
-export default AuthProvider
+export default AuthProvider;
