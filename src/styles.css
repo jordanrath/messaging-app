@@ -159,7 +159,7 @@ input,
 }
 
 /* ---------------Hamburger Menu Styles--------------- */
-.menu {
+/* .menu {
   width: 100%;
   height: 50px;
   background-color: #282828;
@@ -178,11 +178,11 @@ input,
 
 .menu__btn:before {
   content: "";
-  position: relative;
+  position: relative; */
   /* left: 10px; */
   /* top: .8em;
   bottom: .8em; */
-  width: 2em;
+  /* width: 2em;
   height: 1.5em;
   background: linear-gradient(
     to bottom, 
@@ -191,8 +191,104 @@ input,
     #FFFFFF 40%, #FFFFFF 60%, 
     #282828 60%, #282828 80%, 
     #FFFFFF 80%, #FFFFFF 100%
-  );
+  ); 
+}*/
+
+.menu {
+  position: fixed;
+  z-index: 2;
 }
+
+.menu__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+}
+
+.logo {
+  text-decoration: none;
+  color: #FFFFFF;
+  font-family: "Monument Extended";
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.menu__toggle {
+  cursor: pointer;
+}
+
+.menu__overlay {
+  position: fixed;
+  background-color: #121212;
+  z-index: -2;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 4em;
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu__hamburger {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: 0.3s ease;
+  padding: 2.4em;
+}
+
+.menu__hamburger:hover {
+  background: #2a2a2f;
+}
+
+.menu__open {
+  background: #2a2a2f;
+}
+
+.lineTop,
+.lineBottom {
+  margin: 0 auto;
+  position: absolute;
+  display: block;
+  width: 24px;
+  height: 2px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  left: 0;
+  right: 0;
+  transform: rotate(0deg);
+  transition: all 0.4s;
+}
+
+.lineTop {
+  top: 2.2em;
+}
+
+.lineBottom {
+  bottom: 2.2em;
+}
+
+.lineTop.spin {
+  top: 2.35em;
+  transform: rotate(135deg);
+  background: #fff;
+}
+
+.lineBottom.spin {
+  bottom: 2.35em;
+  transform: rotate(225deg);
+  background: #fff;
+}
+
+.menu__hamburger
 
 /* ---------------Dashboard Styles--------------- */
 .dashboard {
