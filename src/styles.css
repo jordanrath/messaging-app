@@ -288,7 +288,73 @@ input,
   background: #fff;
 }
 
-.menu__hamburger
+ul.menu__links {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+ul.menu__links li {
+  list-style: none;
+  position: relative;
+  color: #fff;
+  cursor: pointer;
+  font-size: 40px;
+  top: 0;
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+ul.menu__links li a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 40px;
+  position: relative;
+  top: 0;
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+ul.menu__links li a:hover {
+  color: #3665EB;
+  transition-delay: 0ms;
+}
+
+/* li.menu__item:hover {
+  transition-delay: unset;
+  transition: none;
+  color: #3665EB;
+  border-bottom: 2px solid red;
+} */
+
+.menu__btn {
+  list-style: none;
+  position: relative;
+  color: #fff;
+  background-color: #121212;
+  cursor: pointer;
+  font-size: 40px;
+  top: 0;
+  transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.menu__item__wrapper {
+  content: "";
+  position: absolute;
+  top: 120px;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  background-color: #121212;
+  margin: 0 auto;
+}
 
 /* ---------------Dashboard Styles--------------- */
 .dashboard {

@@ -1,9 +1,7 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 const Menu = () => {
-    const navigate = useNavigate();
-
     const [menuOpen, setMenuOpen] = useState(false);
 
 
@@ -20,19 +18,57 @@ const Menu = () => {
               </div>
             </div>
           </div>
-          <div className="menu__overlay" style={{
-            top: menuOpen ? "0" : "-100%",
-            transitionDelay: menuOpen ? "0s" : "0s",
-          }}></div>
+          <div 
+            className="menu__overlay" 
+            style={{
+              top: menuOpen ? "0" : "-100%",
+              transitionDelay: menuOpen ? "0s" : "0s",
+            }}
+          >
+            <ul className='menu__links'>
+              <li className='menu__item'>
+                <Link
+                  to='/dashboard'
+                  onClick={() => setMenuOpen(!menuOpen)}
+                  style={{
+                    top: menuOpen ? "0" : "120px",
+                    transitionDelay: menuOpen ? "0.8s" : "0s",
+                  }}
+                >
+                  Account Dashboard
+                </Link>
+                <div className='menu__item__wrapper'></div>
+              </li>
+              <li className='menu__item'>
+                  <button
+                    className='menu__btn'
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    style={{
+                      top: menuOpen ? "0" : "120px",
+                      transitionDelay: menuOpen ? "0.9s" : "0s",
+                    }}
+                  >
+                    Logout
+                  </button>
+                <div className='menu__item__wrapper'></div>
+              </li>
+              <li className='menu__item'>
+                  <button
+                    className='menu__btn'
+                    onClick={() => setMenuOpen(!menuOpen)}
+                    style={{
+                      top: menuOpen ? "0" : "120px",
+                      transitionDelay: menuOpen ? "1s" : "0s",
+                    }}
+                  >
+                    Contact
+                  </button>
+                <div className='menu__item__wrapper'></div>              
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-
-
-    // <div className='menu'>
-    //     <button className='menu__btn' onClick={() => {navigate('/dashboard')}}>
-    //         {/* <Link to='/dashboard'></Link> */}
-    //     </button>
-    // </div>
   )
 }
 
