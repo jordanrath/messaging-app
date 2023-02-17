@@ -1,10 +1,20 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
+import { logout } from '../Firebase';
 
 const Menu = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const [isHover, setIsHover] = useState(false);
 
+    const navigate = useNavigate();
 
+    const handleMouseEnter = (id) => {
+      setIsHover({hover: id});
+    };
+
+    const handleMouseLeave = () => {
+      setIsHover({hover: null});
+    };
 
   return (
       <div className="menu">
@@ -33,6 +43,7 @@ const Menu = () => {
                   style={{
                     top: menuOpen ? "0" : "120px",
                     transitionDelay: menuOpen ? "0.8s" : "0s",
+                    // color: isHover === "0" ? "#3665EB" : "#fff",
                   }}
                 >
                   Account Dashboard
@@ -42,10 +53,11 @@ const Menu = () => {
               <li className='menu__item'>
                   <button
                     className='menu__btn'
-                    onClick={() => setMenuOpen(!menuOpen)}
+                    onClick={() => {logout(); navigate('/');}}
                     style={{
                       top: menuOpen ? "0" : "120px",
                       transitionDelay: menuOpen ? "0.9s" : "0s",
+                      // color: isHover === "1" ? "#3665EB" : "#fff",
                     }}
                   >
                     Logout
@@ -59,6 +71,7 @@ const Menu = () => {
                     style={{
                       top: menuOpen ? "0" : "120px",
                       transitionDelay: menuOpen ? "1s" : "0s",
+                      // color: isHover === "2" ? "#3665EB" : "#fff",
                     }}
                   >
                     Contact

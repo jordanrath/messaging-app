@@ -299,14 +299,14 @@ ul.menu__links {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 50px;
 }
 
 ul.menu__links li {
   list-style: none;
   position: relative;
   color: #fff;
-  cursor: pointer;
+  /* cursor: pointer; */
   font-size: 40px;
   top: 0;
   transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -322,10 +322,10 @@ ul.menu__links li a {
   transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-ul.menu__links li a:hover {
+/* ul.menu__links li a:hover {
   color: #3665EB;
   transition-delay: 0ms;
-}
+} */
 
 /* li.menu__item:hover {
   transition-delay: unset;
