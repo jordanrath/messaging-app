@@ -22,9 +22,15 @@ const Menu = () => {
           <div className="menu__nav">
             <div className="logo">The ChatRoom</div>
               <div className="menu__toggle" onClick={() => setMenuOpen(!menuOpen)}>
-                <div className={menuOpen ? "menu__hamburger menu__open" : "menu__hamburger"}>
+                {/* <div className={menuOpen ? "menu__hamburger menu__open" : "menu__hamburger"}> */}
+                {/* <span className={menuOpen ? "lineTop spin" : "lineTop"}></span>
                 <span className={menuOpen ? "lineTop spin" : "lineTop"}></span>
-                <span className={menuOpen ? "lineBottom spin" : "lineBottom"}></span>
+                <span className={menuOpen ? "lineBottom spin" : "lineBottom"}></span> */}
+                <div className='lineContainer'>
+                <div className={menuOpen ? "lineTop spin" : "lineTop"}></div>
+                <div className={menuOpen ? "lineMiddle slide-out" : "lineMiddle"}></div>
+                <div className={menuOpen ? "lineBottom spin" : "lineBottom"}></div>
+                {/* </div> */}
               </div>
             </div>
           </div>

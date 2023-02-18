@@ -204,12 +204,13 @@ input,
   top: 0;
   left: 0;
   width: 100%;
+  height: 50px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  padding: 0px 10px;
-  background-color: red;
+  padding: 0px 20px;
+  background-color: #121212;
 }
 
 .logo {
@@ -237,25 +238,9 @@ input,
   transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.menu__hamburger {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  cursor: pointer;
-  border-radius: 50%;
-  transition: 0.3s ease;
-  padding: 2.4em;
-}
+/* S */
 
-.menu__hamburger:hover {
-  background: #2a2a2f;
-}
-
-.menu__open {
-  background: #2a2a2f;
-}
-
-.lineTop,
+/* .lineTop,
 .lineBottom {
   margin: 0 auto;
   position: absolute;
@@ -288,7 +273,70 @@ input,
   bottom: 2.35em;
   transform: rotate(225deg);
   background: #fff;
+} */
+
+.lineContainer {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  padding: 4px;
 }
+
+.lineTop,
+.lineMiddle,
+.lineBottom {
+  height: 2px;
+  width: 30px;
+  background-color: #4070F4;
+  transition: all 0.5s ease;
+}
+
+.lineTop {
+  transform: none;
+  transform-origin: top left;
+  margin-bottom: 5px;
+}
+
+.lineMiddle {
+  opacity: 1;
+  transform: none;
+}
+
+.lineBottom {
+  transform: none;
+  transform-origin: top left;
+  margin-top: 5px;
+}
+
+.lineTop.spin {
+  transform: translateY(-3px) rotate(35deg);
+}
+
+.lineMiddle.slide-out {
+  opacity: 0;
+  transform: translateX(16px);
+}
+
+.lineBottom.spin {
+  transform: translateX(-2px) rotate(-35deg);
+}
+
+/* .lineTop.spin {
+  top: 2.35em;
+  transform: rotate(135deg);
+  background: #fff;
+}
+
+.lineBottom.spin {
+  bottom: 2.35em;
+  transform: rotate(225deg);
+  background: #fff;
+} */
+
 
 ul.menu__links {
   position: absolute;
