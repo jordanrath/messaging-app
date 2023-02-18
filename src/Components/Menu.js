@@ -53,7 +53,7 @@ const Menu = () => {
               <li className='menu__item'>
                   <button
                     className='menu__btn'
-                    onClick={() => {logout(); navigate('/');}}
+                    onClick={() => {navigate('/'); logout();}}
                     style={{
                       top: menuOpen ? "0" : "120px",
                       transitionDelay: menuOpen ? "0.9s" : "0s",
