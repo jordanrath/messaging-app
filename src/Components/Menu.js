@@ -1,12 +1,18 @@
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import { logout } from '../Firebase';
+import { auth } from '../Firebase';
 
 const Menu = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     const [isHover, setIsHover] = useState(false);
 
     const navigate = useNavigate();
+
+    const logout = () => {
+      signOut(auth);
+      navigate("/");
+    }
 
     const handleMouseEnter = (id) => {
       setIsHover({hover: id});
@@ -27,13 +33,13 @@ const Menu = () => {
                 <span className={menuOpen ? "lineTop spin" : "lineTop"}></span>
                 <span className={menuOpen ? "lineBottom spin" : "lineBottom"}></span> */}
                 <div className='lineContainer'>
-                <div className={menuOpen ? "lineTop spin" : "lineTop"}></div>
-                <div className={menuOpen ? "lineMiddle slide-out" : "lineMiddle"}></div>
-                <div className={menuOpen ? "lineBottom spin" : "lineBottom"}></div>
+                  <div className={menuOpen ? "lineTop spin" : "lineTop"}></div>
+                  <div className={menuOpen ? "lineMiddle slide-out" : "lineMiddle"}></div>
+                  <div className={menuOpen ? "lineBottom spin" : "lineBottom"}></div>
                 {/* </div> */}
+                </div>
               </div>
             </div>
-          </div>
           <div 
             className="menu__overlay" 
             style={{
@@ -59,7 +65,7 @@ const Menu = () => {
               <li className='menu__item'>
                   <button
                     className='menu__btn'
-                    onClick={() => {navigate('/'); logout();}}
+                    onClick={logout}
                     style={{
                       top: menuOpen ? "0" : "120px",
                       transitionDelay: menuOpen ? "0.9s" : "0s",

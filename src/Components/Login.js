@@ -11,15 +11,28 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [user, loading] = useAuthState(auth);
+    const [login, setLogin] = useState(false);
     const navigate = useNavigate();
+
+    // const handleLoginClick = () => {
+
+    //     try {
+    //         if (user || loading)
+    //         navigate("/chatroom")
+    //     } catch (err) {
+    //         console.error(err);
+    //         alert("An error occurred fetching user data");
+    //     }
+    // };
 
     useEffect(() => {
         if (loading) {
-            //trigger custom loading screen
+            //trigger loading screen
+            setLogin(true)
             return;
         }
-        if (user) navigate("/chatroom");
-    }, [user, loading, navigate]);
+        if (user && login) (navigate("/chatroom"));
+    }, [user, loading, login, navigate]);
 
   return (
     <div className='login'>
@@ -40,7 +53,7 @@ const Login = () => {
             />
             <button
                 className='login__btn'
-                onClick={() => logInWithEmailAndPassword(email, password)}
+                onClick={() => {logInWithEmailAndPassword(email, password);}}
             >
                 Login
             </button>

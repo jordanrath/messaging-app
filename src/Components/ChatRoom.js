@@ -31,7 +31,7 @@ const ChatRoom = () => {
   });
 
     return (
-      <div className='chatroom'>
+      <div className='chatroom'>  
         <Menu />
         <main className='chat-box'>
           <div className='message-wrapper'>
@@ -43,6 +43,6 @@ const ChatRoom = () => {
         </main>
       </div>
     )
-  }
+  };
 
 export default ChatRoom;

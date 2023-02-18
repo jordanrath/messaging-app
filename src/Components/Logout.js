@@ -13,7 +13,7 @@ const Logout = () => {
 
   return (
     <>
-        <Logout/>
+      <Logout/>
     </>
   )
 };
