@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Ubuntu:wght@300&display=swap');
+
 #root {
   --primary: #0E2431;
   --secondary: #4070F4;
@@ -19,7 +21,7 @@ html,
 body {
   max-width: 100vw;
   font-size: 16px;
-  font-family: sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   background-color: #181818;
 }
 
@@ -224,7 +226,7 @@ input,
 .logo {
   text-decoration: none;
   color: #FFFFFF;
-  font-family: "Monument Extended";
+  font-family: 'Shadows Into Light', cursive;
   font-weight: bolder;
   text-transform: uppercase;
 }
@@ -401,6 +403,7 @@ ul.menu__links li a {
   font-size: 40px;
   top: 0;
   transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .menu__item__wrapper {
@@ -579,6 +582,7 @@ ul.menu__links li a {
   background-color: #161618;
   color: #FFFFFF;
   font-size: 1rem;
+  font-family: 'Ubuntu', sans-serif;
 }
 .send-message > input:placeholder {
   color: #ddd;
@@ -586,6 +590,7 @@ ul.menu__links li a {
 .send-message > :is(input, button):focus {
   outline: none;
   border-bottom: 1px solid #39ace7;
+  font-family: 'Ubuntu', sans-serif;
 }
 .send-message > button {
   width: 70px;
@@ -596,6 +601,7 @@ ul.menu__links li a {
   border: 1px solid #7cc5d9;
   background-color: #39ace7;
   font-weight: 600;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 
