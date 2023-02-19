@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import {
   query,
   collection,
@@ -13,6 +13,13 @@ import Menu from './Menu';
 
 const ChatRoom = () => {
   const [messages, setMessages] = useState([]);
+  
+  const messagesEndRef = useRef(null);
+  const scrollToBottom = () => {
+    messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(scrollToBottom, [messages]);
 
   useEffect(() => {
     const q = query(
@@ -39,6 +46,7 @@ const ChatRoom = () => {
               <Message key={message.id} message={message} />
             ))}
           </div>
+          <div ref={messagesEndRef} />
           <SendMessage />
         </main>
       </div>

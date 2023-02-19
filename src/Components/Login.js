@@ -28,15 +28,16 @@ const Login = () => {
     useEffect(() => {
         if (loading) {
             //trigger loading screen
-            setLogin(true)
-            return;
+            console.log('loading')
+            // return;
         }
-        if (user && login) (navigate("/chatroom"));
+        if (user) {console.log('user');(navigate("/chatroom"))}
     }, [user, loading, login, navigate]);
 
   return (
     <div className='login'>
         <div className='login__container'>
+            {/* <form> */}
             <input
                 type='text'
                 className='login__textbox'
@@ -51,6 +52,7 @@ const Login = () => {
                 onChange={(event) => setPassword(event.target.value)}
                 placeholder='Password'
             />
+            {/* </form> */}
             <button
                 className='login__btn'
                 onClick={() => {logInWithEmailAndPassword(email, password);}}

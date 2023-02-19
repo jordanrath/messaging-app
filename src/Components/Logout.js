@@ -9,11 +9,11 @@ const Logout = () => {
         signOut(auth);
         navigate("/");
     }
-    logout();
+    
 
   return (
     <>
-      <Logout/>
+      {logout}
     </>
   )
 };
