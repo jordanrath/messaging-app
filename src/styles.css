@@ -204,13 +204,13 @@ input,
   top: 0;
   left: 0;
   width: 100%;
-  height: 50px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 0;
   padding: 0px 20px;
-  background-color: #121212;
+  background-color: #181818;
 }
 
 .logo {
@@ -414,7 +414,7 @@ ul.menu__links li a {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-color: #dcdcdc;
+  background-color: #121212;
 }
 
 .dashboard h2 {
@@ -422,6 +422,7 @@ ul.menu__links li a {
   justify-content: center;
   width: 100%;
   padding-bottom: 10px;
+  color: whitesmoke;
 }
 
 .dashboard h4 {
@@ -455,18 +456,22 @@ ul.menu__links li a {
   height: 100px;
   border: none;
   border-radius: 6px;
-  color: white;
+  color: whitesmoke;
   background-color: #282828;
   cursor: pointer;
+}
+
+.dashboard__btn::before {
+
+}
+
+.dashboard__btn::after {
+
 }
 
 .dashboard__btn:hover {
   background-color: #404040;
 }
-
-/* .dashboard div {
-  margin-top: 7px;
-} */
 
 .dashboard__box {
   display: inherit;
@@ -489,18 +494,19 @@ ul.menu__links li a {
   width: 50%;
   max-width: 1500px;
   min-width: 350px;
-  margin-top: 50px;
-  height: calc(100% - 50px);
+  margin-top: 70px;
+  height: calc(100% - 70px);
   background-color: #121212;
+  border-radius: 50px;
 }
 
 .chat-box {
   width: 100%;
-  height: 100%;
+  height: calc(100% - 90px);
 }
 
 .message-wrapper {
-  padding: 40px 15px;
+  padding: 70px 15px;
   margin-bottom: 60px;
 }
 .chat-bubble {
