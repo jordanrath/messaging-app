@@ -547,6 +547,11 @@ ul.menu__links li a {
   text-align: right;
 }
 
+.user-avatar {
+  font-size: 35px;
+  margin-right: 10px;
+}
+
 /* ---Messaging Input & Button Styles--- */
 .send-message {
   position: fixed;

@@ -10,7 +10,9 @@ const Message = ({ message }) => {
         className={`chat-bubble ${message?.uid === user?.uid ? "right" : ""}`}
     >
         {message.avatar == null ? 
-            "" :
+            <span className="material-symbols-outlined user-avatar">
+                account_circle
+            </span> :
             <img
             className='chat-bubble__left'
             src={message.avatar}

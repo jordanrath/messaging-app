@@ -33,7 +33,7 @@ const Dashboard = () => {
   return (
     <>
     <div className="dashboard">
-      <h2>Welcome to your Account Dashboard, {name}</h2>
+      <h2>Hello {name}, welcome to your account dashboard</h2>
       <div className="dashboard__container">
           <Modal title='Account Info' name={name} email={user?.email} />
           {/* <div>You're currently logged in as {user?.email}.</div> */}
