@@ -437,7 +437,7 @@ ul.menu__links li a {
 }
 
 .dashboard h4 {
-  font-weight: 100;
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .dashboard__container {
