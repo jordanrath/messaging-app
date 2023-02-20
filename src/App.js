@@ -11,7 +11,7 @@ const App = () => {
 
   return (
     <div className="app">
-      {/* <AuthProvider> */}
+      <AuthProvider>
         <Router>
           <Routes>
             <Route exact path="/" element={<Login />}/>
@@ -21,7 +21,7 @@ const App = () => {
             <Route exact path="/dashboard" element={<Dashboard />} />
           </Routes>
         </Router>
-      {/* </AuthProvider> */}
+      </AuthProvider>
     </div>
   );
 };

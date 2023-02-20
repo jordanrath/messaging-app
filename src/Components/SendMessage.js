@@ -1,11 +1,14 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { auth, db } from '../Firebase';
 import { addDoc, collection } from '../Firebase';
 import { serverTimestamp } from 'firebase/firestore';
+import { AuthContext } from '../Utils/AuthContext';
 
 const SendMessage = () => {
   const [message, setMessage] = useState("");
 
+  const { user } = useContext(AuthContext);
+  
   const sendMessage = async (e) => {
     e.preventDefault();
     if (message.trim() === "") {
@@ -20,7 +23,7 @@ const SendMessage = () => {
       createdAt: serverTimestamp(),
       uid,
     });
-    setMessage("");
+    setMessage("");    
   }
 
     return (

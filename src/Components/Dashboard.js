@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 import { auth, db, logout } from "../Firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import Modal from "./Modal";
-import Logout from "./Logout";
 
 const Dashboard = () => {
     const [user, loading] = useAuthState(auth);
@@ -50,7 +49,7 @@ const Dashboard = () => {
           </span>
           <h4>Reset Password</h4>
         </button>
-       <button className="dashboard__btn" onClick={Logout}>
+       <button className="dashboard__btn" onClick={logout}>
           <span className="material-symbols-outlined">logout</span>
           <h4>Logout</h4>
         </button>

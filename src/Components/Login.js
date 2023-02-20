@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
     auth, 
+    getUser, 
     logInWithEmailAndPassword, 
     signInWithGoogle 
 } from '../Firebase';
@@ -31,7 +32,7 @@ const Login = () => {
             console.log('loading')
             // return;
         }
-        if (user) {console.log('user');(navigate("/chatroom"))}
+        if (user) {console.log('user');(navigate("/chatroom")); getUser()}
     }, [user, loading, login, navigate]);
 
   return (
