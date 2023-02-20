@@ -1,39 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
-    auth, 
-    getUser, 
     logInWithEmailAndPassword, 
     signInWithGoogle 
 } from '../Firebase';
-import { useAuthState } from "react-firebase-hooks/auth";
+import authStatuses from '../Defines/authStatuses';
+import { AuthContext } from '../Context/AuthContext';
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [user, loading] = useAuthState(auth);
-    const [login, setLogin] = useState(false);
     const navigate = useNavigate();
-
-    // const handleLoginClick = () => {
-
-    //     try {
-    //         if (user || loading)
-    //         navigate("/chatroom")
-    //     } catch (err) {
-    //         console.error(err);
-    //         alert("An error occurred fetching user data");
-    //     }
-    // };
+    const { authStatus, setAuthStatus } = useContext(AuthContext); 
 
     useEffect(() => {
-        if (loading) {
-            //trigger loading screen
-            console.log('loading')
-            // return;
-        }
-        if (user) {console.log('user');(navigate("/chatroom")); getUser()}
-    }, [user, loading, login, navigate]);
+        console.log("aaa", authStatus)
+        if (authStatus === authStatuses.signedIn) {console.log('bbb'); (navigate("/chatroom"));}
+    }, [navigate, authStatus]);
 
   return (
     <div className='login'>
@@ -56,13 +39,19 @@ const Login = () => {
             {/* </form> */}
             <button
                 className='login__btn'
-                onClick={() => {logInWithEmailAndPassword(email, password);}}
+                onClick={() => {
+                    logInWithEmailAndPassword(email, password);
+                    setAuthStatus(authStatuses.signingIn);
+                }}
             >
                 Login
             </button>
             <button 
                 className='login__btn login__google'
-                onClick={signInWithGoogle}
+                onClick={() => {
+                    signInWithGoogle();
+                    setAuthStatus(authStatuses.signingIn);
+                }}
             >
                 Login with Google   
             </button>

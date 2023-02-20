@@ -1,26 +1,9 @@
-import { signOut } from 'firebase/auth';
 import React, { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
-import { auth } from '../Firebase';
+import { Link } from 'react-router-dom'
+import Logout from './Logout';
 
 const Menu = () => {
     const [menuOpen, setMenuOpen] = useState(false);
-    const [isHover, setIsHover] = useState(false);
-
-    const navigate = useNavigate();
-
-    const logout = () => {
-      signOut(auth);
-      navigate("/");
-    }
-
-    const handleMouseEnter = (id) => {
-      setIsHover({hover: id});
-    };
-
-    const handleMouseLeave = () => {
-      setIsHover({hover: null});
-    };
 
   return (
       <div className="menu">
@@ -28,15 +11,10 @@ const Menu = () => {
           <div className="menu__nav">
             <div className="logo">The ChatRoom</div>
               <div className="menu__toggle" onClick={() => setMenuOpen(!menuOpen)}>
-                {/* <div className={menuOpen ? "menu__hamburger menu__open" : "menu__hamburger"}> */}
-                {/* <span className={menuOpen ? "lineTop spin" : "lineTop"}></span>
-                <span className={menuOpen ? "lineTop spin" : "lineTop"}></span>
-                <span className={menuOpen ? "lineBottom spin" : "lineBottom"}></span> */}
                 <div className='lineContainer'>
                   <div className={menuOpen ? "lineTop spin" : "lineTop"}></div>
                   <div className={menuOpen ? "lineMiddle slide-out" : "lineMiddle"}></div>
                   <div className={menuOpen ? "lineBottom spin" : "lineBottom"}></div>
-                {/* </div> */}
                 </div>
               </div>
             </div>
@@ -55,7 +33,6 @@ const Menu = () => {
                   style={{
                     top: menuOpen ? "0" : "120px",
                     transitionDelay: menuOpen ? "0.8s" : "0s",
-                    // color: isHover === "0" ? "#3665EB" : "#fff",
                   }}
                 >
                   Account Dashboard
@@ -63,17 +40,13 @@ const Menu = () => {
                 <div className='menu__item__wrapper'></div>
               </li>
               <li className='menu__item'>
-                  <button
+                  <Logout
                     className='menu__btn'
-                    onClick={logout}
                     style={{
                       top: menuOpen ? "0" : "120px",
                       transitionDelay: menuOpen ? "0.9s" : "0s",
-                      // color: isHover === "1" ? "#3665EB" : "#fff",
                     }}
-                  >
-                    Logout
-                  </button>
+                  />
                 <div className='menu__item__wrapper'></div>
               </li>
               <li className='menu__item'>
@@ -83,7 +56,6 @@ const Menu = () => {
                     style={{
                       top: menuOpen ? "0" : "120px",
                       transitionDelay: menuOpen ? "1s" : "0s",
-                      // color: isHover === "2" ? "#3665EB" : "#fff",
                     }}
                   >
                     Contact

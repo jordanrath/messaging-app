@@ -1,19 +1,30 @@
 import { signOut } from 'firebase/auth';
+import { useCallback, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Context/AuthContext';
+import authStatuses from '../Defines/authStatuses';
 import { auth } from '../Firebase';
 
-const Logout = () => {
-    const navigate = useNavigate();
+const Logout = ({ className, style, id, children }) => {
+  const { setAuthStatus } = useContext(AuthContext);
+  const navigate = useNavigate();
 
-    const logout = () => {
-        signOut(auth);
-        navigate("/");
-    }
+    const onLogoutClick = useCallback(() => {
+      setAuthStatus(authStatuses.signingOut);
+      signOut(auth);
+      navigate("/");
+    })
     
+    const buttonProps = {className, style, id, onClick: onLogoutClick};
+    const content = (!children ? undefined : children);
 
   return (
     <>
-      {logout}
+      <button
+        {...buttonProps}
+      >
+        {content}Logout
+      </button>
     </>
   )
 };

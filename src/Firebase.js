@@ -79,7 +79,6 @@ import {
     try {
         const res = await createUserWithEmailAndPassword(auth, email, password, name);
         const user = res.user;
-        console.log('USER', user)
         await addDoc(collection(db, "users"), {
             uid: user.uid,
             name,
@@ -117,7 +116,7 @@ import {
       if (user) {
         const name = user.displayName;
         const uid = user.uid;
-        console.log(`User ${name} ${uid} logged in: `, user)
+        // console.log(`User ${name} ${uid} logged in: `, user)
       } else {
         console.log(`User logged out out.`)
       };

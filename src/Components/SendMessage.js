@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react'
 import { auth, db } from '../Firebase';
 import { addDoc, collection } from '../Firebase';
 import { serverTimestamp } from 'firebase/firestore';
-import { AuthContext } from '../Utils/AuthContext';
+import { AuthContext } from '../Context/AuthContext';
 
 const SendMessage = () => {
   const [message, setMessage] = useState("");

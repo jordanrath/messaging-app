@@ -5,7 +5,7 @@ import Dashboard from './Components/Dashboard';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import Reset from './Components/Reset';
-import AuthProvider from './Utils/AuthProvider';
+import AuthProvider from './Context/AuthProvider';
 
 const App = () => {
 
