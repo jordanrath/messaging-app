@@ -9,7 +9,7 @@ const Message = ({ message }) => {
     <div
         id='chat-bubble'
         className={`chat-bubble ${message?.uid === user?.uid ? "right" : ""}`}
-        data-aos='fade-in'
+        data-aos='zoom-in-up'
         data-aos-anchor="#chat-bubble"
     >
         {message.avatar == null ? 

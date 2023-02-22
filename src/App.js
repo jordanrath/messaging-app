@@ -14,7 +14,7 @@ const App = () => {
   useEffect(() => {
     AOS.init({
       once: true,
-      duration: 1000,
+      duration: 300,
       offset: 0,
       easing: 'ease-in-out-sine',
       anchorPlacement: '#chat-bubble',
