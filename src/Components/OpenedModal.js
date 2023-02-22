@@ -27,4 +27,4 @@ const OpenedModal = ({ text, open, handleOpenedModal, title, name, email }) => {
   )
 }
 
-export default OpenedModal
+export default OpenedModal;

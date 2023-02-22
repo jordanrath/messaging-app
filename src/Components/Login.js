@@ -14,29 +14,30 @@ const Login = () => {
     const { authStatus, setAuthStatus } = useContext(AuthContext); 
 
     useEffect(() => {
-        console.log("aaa", authStatus)
-        if (authStatus === authStatuses.signedIn) {console.log('bbb'); (navigate("/chatroom"));}
+        if (authStatus === authStatuses.signedIn) {(navigate("/chatroom"));}
     }, [navigate, authStatus]);
 
   return (
     <div className='login'>
         <div className='login__container'>
-            {/* <form> */}
-            <input
-                type='text'
-                className='login__textbox'
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder='E-mail Address'
-            />
-            <input 
-                type='password'
-                className='login__textbox'
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-                placeholder='Password'
-            />
-            {/* </form> */}
+            <form className='login__form' autoComplete='on'>
+                <input
+                    type='text'
+                    className='login__textbox'
+                    autoComplete='on'
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    placeholder='E-mail Address'
+                />
+                <input 
+                    type='password'
+                    className='login__textbox'
+                    autoComplete='on'
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                    placeholder='Password'
+                />
+            </form>
             <button
                 className='login__btn'
                 onClick={() => {

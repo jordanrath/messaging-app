@@ -11,10 +11,8 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
       if (user === null && authStatus === authStatuses.signingOut) {
-          console.log('ddd', user)
           setAuthStatus(authStatuses.signedOut);
       } else if (user !== null && authStatus === authStatuses.signingIn){
-          console.log('ccc', user)
           setAuthStatus(authStatuses.signedIn);
       } else {
 

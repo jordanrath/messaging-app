@@ -6,10 +6,9 @@ const Modal = ({ title, name, email }) => {
 
     const handleOpenedModal = event => {
         if (event) {
-            console.log('some click');
-        } 
-            
-        setOpen(false);
+            setOpen(true)
+        }     
+            setOpen(false);
     }
 
   return (

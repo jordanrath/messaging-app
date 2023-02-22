@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
-import { auth, db, logout } from "../Firebase";
+import { auth, db } from "../Firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import Modal from "./Modal";
 import Logout from "./Logout";
@@ -36,8 +36,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <h2>Hello {name}, welcome to your account dashboard</h2>
       <div className="dashboard__container">
-          <Modal title='Account Info' name={name} email={user?.email} />
-          {/* <div>You're currently logged in as {user?.email}.</div> */}
+          <Modal title='Account Info' name={name} email={user?.email} />   
         <button className="dashboard__btn" onClick={() => navigate('/chatroom')}>
           <span className="material-symbols-outlined">
             chat

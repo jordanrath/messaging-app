@@ -13,7 +13,7 @@ const Logout = ({ className, style, id, children }) => {
       setAuthStatus(authStatuses.signingOut);
       signOut(auth);
       navigate("/");
-    })
+    }, [navigate, setAuthStatus])
     
     const buttonProps = {className, style, id, onClick: onLogoutClick};
     const content = (!children ? undefined : children);

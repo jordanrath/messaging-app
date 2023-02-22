@@ -58,6 +58,7 @@ a {
   align-items: center;
   justify-content: center;
 }
+
 .login__container {
   width: auto;
   height: auto;
@@ -68,6 +69,12 @@ a {
   border-radius: 6px;
   padding: 30px;
 }
+
+.login__form {
+  display: flex;
+  flex-direction: column;
+}
+
 input,
 .login__textBox {
   padding: 10px;
@@ -75,9 +82,7 @@ input,
   margin-bottom: 10px;
   border-radius: 6px;
 }
-/* input[type=text] {
-  font-size: 18px;
-} */
+
 .login__btn {
   padding: 10px;
   font-size: 18px;
@@ -87,12 +92,15 @@ input,
   color: #FFFFFF;
   background-color: black;
 }
+
 .login__btn:hover {
   cursor: pointer;
 }
+
 .login__google {
   background-color: #4285f4;
 }
+
 .login div {
   margin-top: 7px;
 }
@@ -105,6 +113,7 @@ input,
   align-items: center;
   justify-content: center;
 }
+
 .register__container {
   display: flex;
   flex-direction: column;
@@ -112,12 +121,14 @@ input,
   background-color: #dcdcdc;
   padding: 30px;
 }
+
 input,
 .register__textBox {
   padding: 10px;
   font-size: 18px;
   margin-bottom: 10px;
 }
+
 .register__btn {
   padding: 10px;
   font-size: 18px;
@@ -127,9 +138,11 @@ input,
   color: white;
   background-color: black;
 }
+
 .register__google {
   background-color: #4285f4;
 }
+
 .register div {
   margin-top: 7px;
 }
@@ -142,6 +155,7 @@ input,
   align-items: center;
   justify-content: center;
 }
+
 .reset__container {
   display: flex;
   flex-direction: column;
@@ -149,12 +163,14 @@ input,
   background-color: #dcdcdc;
   padding: 30px;
 }
+
 input,
 .reset__textBox {
   padding: 10px;
   font-size: 18px;
   margin-bottom: 10px;
 }
+
 .reset__btn {
   padding: 10px;
   font-size: 18px;
@@ -164,46 +180,12 @@ input,
   color: white;
   background-color: black;
 }
+
 .reset div {
   margin-top: 7px;
 }
 
 /* ---------------Hamburger Menu Styles--------------- */
-/* .menu {
-  width: 100%;
-  height: 50px;
-  background-color: #282828;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-}
-
-.menu__btn {
-  background-color: #282828;
-  display: flex;
-  padding-left: 1.25em;
-  position: relative;
-  border: none;
-}
-
-.menu__btn:before {
-  content: "";
-  position: relative; */
-  /* left: 10px; */
-  /* top: .8em;
-  bottom: .8em; */
-  /* width: 2em;
-  height: 1.5em;
-  background: linear-gradient(
-    to bottom, 
-    #FFFFFF, #FFFFFF 20%, 
-    #282828 20%, #282828 40%, 
-    #FFFFFF 40%, #FFFFFF 60%, 
-    #282828 60%, #282828 80%, 
-    #FFFFFF 80%, #FFFFFF 100%
-  ); 
-}*/
-
 .menu {
   position: fixed;
   z-index: 2;
@@ -248,43 +230,6 @@ input,
   padding: 4em;
   transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-/* S */
-
-/* .lineTop,
-.lineBottom {
-  margin: 0 auto;
-  position: absolute;
-  display: block;
-  width: 24px;
-  height: 2px;
-  border-radius: 10px;
-  background: rgba(255, 255, 255, 0.5);
-  left: 0;
-  right: 0;
-  transform: rotate(0deg);
-  transition: all 0.4s;
-}
-
-.lineTop {
-  top: 2.2em;
-}
-
-.lineBottom {
-  bottom: 2.2em;
-}
-
-.lineTop.spin {
-  top: 2.35em;
-  transform: rotate(135deg);
-  background: #fff;
-}
-
-.lineBottom.spin {
-  bottom: 2.35em;
-  transform: rotate(225deg);
-  background: #fff;
-} */
 
 .lineContainer {
   height: 32px;
@@ -336,19 +281,6 @@ input,
   transform: translateX(-1px) translateY(0px) rotate(-35deg);
 }
 
-/* .lineTop.spin {
-  top: 2.35em;
-  transform: rotate(135deg);
-  background: #fff;
-}
-
-.lineBottom.spin {
-  bottom: 2.35em;
-  transform: rotate(225deg);
-  background: #fff;
-} */
-
-
 ul.menu__links {
   position: absolute;
   top: 50%;
@@ -367,7 +299,6 @@ ul.menu__links li {
   list-style: none;
   position: relative;
   color: #fff;
-  /* cursor: pointer; */
   font-size: 40px;
   top: 0;
   transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
@@ -382,18 +313,6 @@ ul.menu__links li a {
   top: 0;
   transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-
-/* ul.menu__links li a:hover {
-  color: #3665EB;
-  transition-delay: 0ms;
-} */
-
-/* li.menu__item:hover {
-  transition-delay: unset;
-  transition: none;
-  color: #3665EB;
-  border-bottom: 2px solid red;
-} */
 
 .menu__btn {
   list-style: none;
@@ -443,15 +362,12 @@ ul.menu__links li a {
 
 .dashboard__container {
   display: flex;
-  /* flex-direction: column; */
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   align-items: center;
   max-width: 850px;
-  /* height: 80%; */
   text-align: center;
-  /* background-color: #404040; */
   border-radius: 6px;
   border-top: 2px solid var(--secondary);;
   padding: 30px;
@@ -473,14 +389,6 @@ ul.menu__links li a {
   cursor: pointer;
 }
 
-.dashboard__btn::before {
-
-}
-
-.dashboard__btn::after {
-
-}
-
 .dashboard__btn:hover {
   background-color: #404040;
 }
@@ -488,8 +396,6 @@ ul.menu__links li a {
 .dashboard__box {
   display: inherit;
   width: 50%;
-  /* width: 50%;
-  height: 15%; */
 }
 
 /* ---------------Chat Room Styles--------------- */
@@ -501,15 +407,12 @@ ul.menu__links li a {
 
 /* ---Chat Bubble Styles--- */
 .chatroom {
-  /* display: flex;
-  justify-content: center; */
   width: 50%;
   max-width: 1500px;
   min-width: 350px;
   margin-top: 70px;
   height: calc(100% - 70px);
   background-color: #121212;
-  /* border-radius: 50px; */
 }
 
 .chat-box {
@@ -523,7 +426,6 @@ ul.menu__links li a {
   padding-bottom: 15px;
   padding-left: 15px;
   padding-right: 15px;
-  /* margin-bottom: 60px; */
 }
 
 .chat-bubble {
@@ -576,7 +478,6 @@ ul.menu__links li a {
 
 ::-webkit-scrollbar-track {
   background: #121212;
-  /* box-shadow: inset 0 0 5px grey;  */
 }
 
 ::-webkit-scrollbar-thumb {
@@ -669,7 +570,6 @@ ul.menu__links li a {
 
 .send-message__button::after {
   background-color: #4070F4;
-  /* transform: translateY(5px); */
   top: 2px;
 }
 
@@ -810,11 +710,6 @@ body {
     left: calc(50% - 150px);
   }
 }
-
-
-
-
-
 
 /* ---------------TEST Styles--------------- */
 

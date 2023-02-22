@@ -3,7 +3,6 @@ import { initializeApp } from "firebase/app";
 import {
      GoogleAuthProvider,
      getAuth,
-     onAuthStateChanged,
      signInWithPopup,
      signInWithEmailAndPassword,
      createUserWithEmailAndPassword,
@@ -110,19 +109,6 @@ import {
     signOut(auth);
   };
 
-  // listen for auth status changes
-  const getUser = () => {
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const name = user.displayName;
-        const uid = user.uid;
-        // console.log(`User ${name} ${uid} logged in: `, user)
-      } else {
-        console.log(`User logged out out.`)
-      };
-    });
-  };
-
   // export all the functions
   export {
     auth,
@@ -134,5 +120,4 @@ import {
     registerWithEmailAndPassword,
     sendPasswordReset,
     logout,
-    getUser,
   };
