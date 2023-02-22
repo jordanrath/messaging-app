@@ -617,7 +617,17 @@ ul.menu__links li a {
   border-bottom: 1px solid #39ace7;
   font-family: 'Ubuntu', sans-serif;
 }
+
+.send-message__button-container {
+  width: 70px;
+  height: 40px;
+  border-radius: 0 5px 5px 0;
+  background-color: #39ace7;
+  z-index: -2;
+}
+
 .send-message__button {
+  position: relative;
   display: inline-block;
   width: 70px;
   height: 40px;
@@ -626,21 +636,23 @@ ul.menu__links li a {
   color: #242443;
   border: none;
   background-color: #39ace7;
+  background: transparent;
+  transition: all 0.3s ease;
   font-weight: 600;
   font-family: 'Ubuntu', sans-serif;
 }
 
-.send-message__button:after {
+.send-message__button::after {
   position: absolute;
   content: "";
   width: 0;
-  height: 40px;
+  height: 38px;
   top: 0;
   right: 0;
   z-index: -1;
   background-color: #282828;
   border-radius: 0 5px 5px 0;
-  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  box-shadow: inset 2px 1px 2px 0px rgba(255,255,255,.5),
     7px 7px 20px 0px rgba(0,0,0,.1),
     4px 4px 5px 0px rgba(0,0,0,.1);
   transition: all 0.3s ease;
@@ -650,16 +662,20 @@ ul.menu__links li a {
   background-color: #4070F4;
 }
 
-.send-message__button:hover:after {
+.send-message__button:hover::after {
   left: 0;
   width: 100%;
 }
 
-.send-message__button:active {
+.send-message__button::after {
   background-color: #4070F4;
   /* transform: translateY(5px); */
   top: 2px;
 }
+
+.send-message__button:active {
+  top: 2px;
+} 
 
 
 /* ---------------Modal Styles--------------- */
