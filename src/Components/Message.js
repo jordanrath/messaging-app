@@ -7,8 +7,10 @@ const Message = ({ message }) => {
 
   return (
     <div
+        id='chat-bubble'
         className={`chat-bubble ${message?.uid === user?.uid ? "right" : ""}`}
         data-aos='fade-in'
+        data-aos-anchor="#chat-bubble"
     >
         {message.avatar == null ? 
             <span className="material-symbols-outlined user-avatar">

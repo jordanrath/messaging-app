@@ -17,6 +17,7 @@ const App = () => {
       duration: 1000,
       offset: 0,
       easing: 'ease-in-out-sine',
+      anchorPlacement: '#chat-bubble',
     });
     AOS.refresh();
   }, []);
