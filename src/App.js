@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from "aos";
+import "aos/dist/aos.css";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ChatRoom from './Components/ChatRoom';
 import Dashboard from './Components/Dashboard';
@@ -8,6 +10,16 @@ import Reset from './Components/Reset';
 import AuthProvider from './Context/AuthProvider';
 
 const App = () => {
+
+  useEffect(() => {
+    AOS.init({
+      once: true,
+      duration: 1000,
+      offset: 0,
+      easing: 'ease-in-out-sine',
+    });
+    AOS.refresh();
+  }, []);
 
   return (
     <div className="app">
