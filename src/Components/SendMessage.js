@@ -41,7 +41,7 @@ const SendMessage = () => {
           onChange={(e) => setMessage(e.target.value)}
           autoComplete="off"
         />
-        <button type='submit'>Send</button>
+        <button className='send-message__button' type='submit'>Send</button>
       </form>
     )
   }

@@ -229,6 +229,7 @@ input,
   font-family: 'Shadows Into Light', cursive;
   font-weight: bolder;
   text-transform: uppercase;
+  font-size: 24px;
 }
 
 .menu__toggle {
@@ -616,16 +617,48 @@ ul.menu__links li a {
   border-bottom: 1px solid #39ace7;
   font-family: 'Ubuntu', sans-serif;
 }
-.send-message > button {
+.send-message__button {
+  display: inline-block;
   width: 70px;
   height: 40px;
   padding: 5px 10px;
   border-radius: 0 5px 5px 0;
   color: #242443;
-  border: 1px solid #7cc5d9;
+  border: none;
   background-color: #39ace7;
   font-weight: 600;
   font-family: 'Ubuntu', sans-serif;
+}
+
+.send-message__button:after {
+  position: absolute;
+  content: "";
+  width: 0;
+  height: 40px;
+  top: 0;
+  right: 0;
+  z-index: -1;
+  background-color: #282828;
+  border-radius: 0 5px 5px 0;
+  box-shadow: inset 2px 2px 2px 0px rgba(255,255,255,.5),
+    7px 7px 20px 0px rgba(0,0,0,.1),
+    4px 4px 5px 0px rgba(0,0,0,.1);
+  transition: all 0.3s ease;
+}
+
+.send-message__button:hover {
+  background-color: #4070F4;
+}
+
+.send-message__button:hover:after {
+  left: 0;
+  width: 100%;
+}
+
+.send-message__button:active {
+  background-color: #4070F4;
+  /* transform: translateY(5px); */
+  top: 2px;
 }
 
 
