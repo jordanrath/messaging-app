@@ -35,7 +35,7 @@ const ChatRoom = () => {
       setMessages(messages);
     });
     return () => unsubscribe;
-  });
+  }, []);
 
     return (
       <div className='chatroom'>  
