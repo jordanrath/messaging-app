@@ -508,6 +508,7 @@ ul.menu__links li a {
   width: 7px;
 }
 
+/* ---Add color change on mouse wheel scroll --- */
 ::-webkit-scrollbar-track {
   background: var(--background-secondary-dm);
 }
@@ -547,7 +548,7 @@ ul.menu__links li a {
 }
 .send-message > :is(input, button):focus {
   outline: none;
-  border-bottom: 1px solid #39ace7;
+  border-bottom: 1px solid #03DAC6;
   font-family: 'Ubuntu', sans-serif;
 }
 
