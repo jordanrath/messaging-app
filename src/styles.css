@@ -435,7 +435,7 @@ ul.menu__links li a {
   min-width: 350px;
   margin-top: 70px;
   height: calc(100% - 70px);
-  background-color: var(--background-dm);
+  background-color: var(--background-secondary-dm);
 }
 
 .chat-box {
@@ -501,7 +501,7 @@ ul.menu__links li a {
 
 /* ---Add color change on mouse wheel scroll --- */
 ::-webkit-scrollbar-track {
-  background: var(--background-dm);
+  background: var(--background-secondary-dm);
 }
 
 ::-webkit-scrollbar-thumb {
