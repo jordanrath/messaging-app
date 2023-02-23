@@ -4,7 +4,7 @@ import authStatuses from '../Defines/authStatuses';
 import { auth } from '../Firebase';
 import { AuthContext } from './AuthContext';
 
-// receive the children with access to context
+// receive the children with access to contexts
 const AuthProvider = ({ children }) => {
   const [user] = useAuthState(auth);
   const [authStatus, setAuthStatus] = useState(authStatuses.signedOut);
