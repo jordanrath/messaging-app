@@ -375,14 +375,18 @@ ul.menu__links li a {
   background-color: var(--background-secondary-dm);
 }
 
-.dashboard h2 {
-  display: inherit;
+.dashboard__title {
+  display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
   width: 100%;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
   color: var(--background-lm);
   font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
+  font-size: 25px;
 }
 
 .dashboard h4 {
@@ -724,25 +728,18 @@ button {
   padding: 1rem 4rem;
 }
 
-@media screen and (max-width: 450px) {
-  .confirm {
-    width: 300px;
-    left: calc(50% - 150px);
-  }
-}
-
 @media screen and (max-width: 700px) {
   ul.menu__links li a,
   .menu__btn {
     font-size: 20px;
   }
 
-  .dashboard h2 {
-    font-size: 15px;
-  }
-
   .login__container {
     width: unset;
+  }
+
+  .dashboard__title {
+    margin-top: 50px;
   }
 }
 
@@ -754,5 +751,19 @@ button {
   .send-message {
     width: 100%;
   }
+
+  .dashboard h2 {
+    font-size: 30px;
+  }
 }
 
+@media screen and (max-width: 450px) {
+  .confirm {
+    width: 300px;
+    left: calc(50% - 150px);
+  }
+
+  .dashboard h2 {
+    font-size: 25px;
+  }
+}

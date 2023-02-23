@@ -34,14 +34,17 @@ const Dashboard = () => {
   return (
     <>
     <div className="dashboard">
-      <h2>Hello {name}, welcome to your account dashboard</h2>
+      <div className="dashboard__title">
+        <h2>Welcome to your Chatroom</h2>
+        <h2> account, {name}</h2>
+      </div>
       <div className="dashboard__container">
           <Modal title='Account Info' name={name} email={user?.email} />   
         <button className="dashboard__btn" onClick={() => navigate('/chatroom')}>
           <span className="material-symbols-outlined">
             chat
           </span>
-          <h4>Chat Room</h4>
+          <h4>Chatroom</h4>
         </button>
         <button className="dashboard__btn" onClick={() => navigate('/reset')}>
           <span className="material-symbols-outlined">
