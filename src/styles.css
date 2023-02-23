@@ -1,19 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Ubuntu:wght@300&display=swap');
 
 #root {
-  /* --primary: #0E2431;
-  --secondary: #4070F4;
-  --secondary-dark: #3665EB;
-  --gray: #666; */
-  /* --primary: #BB86FC;
-  --primary-variant: #3700B3;
-  --secondary: #03DAC6;
-  --secondary-variant: #018786;
-  --background-dm: #404040;
-  --background-secondary-dm: #121212;
-  --background-lm: #ffffff;
-  --error-dm: #CF6679;
-  --error-lm: #B00020; */
   width: 100vw;
   height: 100vh;
 }
@@ -40,14 +27,14 @@
 html,
 body {
   max-width: 100vw;
-  font-size: 16px;
-  font-family: 'Ubuntu', sans-serif;
-  background-color: var(--background-dm);
-  scroll-behavior: smooth;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 16px;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: var(--background-dm);
+  scroll-behavior: smooth;
 }
 
 /* --------------General & Icon Styles--------------- */
@@ -737,10 +724,6 @@ button {
   .login__container {
     width: unset;
   }
-
-  .dashboard__title {
-    margin-top: 50px;
-  }
 }
 
 @media screen and (max-width: 550px) {
@@ -765,5 +748,39 @@ button {
 
   .dashboard h2 {
     font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .dashboard__container {
+  width: 280px;
+  gap: 5px;
+}
+
+  .dashboard h2 {
+  font-size: 20px;
+}
+}
+
+@media screen and (max-height: 700px) {
+  .dashboard__title {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .dashboard {
+    align-items: unset;
+    justify-content: unset;
+    background-color: unset;
+  }
+
+  ul.menu__links li a,
+  .menu__btn {
+    font-size: 18px;
+  }
+
+  .dashboard__title {
+    margin-top: 50px;
   }
 }
