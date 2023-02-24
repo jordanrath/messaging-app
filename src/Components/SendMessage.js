@@ -28,7 +28,7 @@ const SendMessage = () => {
         <label htmlFor='messageInput' hidden>
           Enter Message
         </label>
-        <div className='send-message__container'>
+        {/* <div className='send-message__container'> */}
           <input
             id='messageInput'
             name='messageInput'
@@ -42,7 +42,7 @@ const SendMessage = () => {
           <div className='send-message__button-container'>
             <button className='send-message__button' type='submit'>Send</button>
           </div>
-        </div>
+        {/* </div> */}
       </form>
     )
   }
