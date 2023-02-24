@@ -1,16 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Ubuntu:wght@300&display=swap');
 
-#root {
-  width: 100vw;
-  height: 100vh;
-}
-
 *,
 *:before,
 *:after {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:root {
   --primary: #BB86FC;
   --primary-variant: #3700B3;
   --secondary: #03DAC6;
@@ -24,17 +21,46 @@
   --error-lm: #B00020;
 }
 
-html,
+html {
+  min-height: 100vh;
+  /* width: 100%; */
+  /* height: -webkit-fill-available; */
+  margin: 0;
+  padding: 0;
+  /* height: -webkit-fill-available;
+  min-height: -webkit-fill-available; */
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  background-color: var(--background-dm);
+  font-size: 16px;
+  scroll-behavior: smooth;
+  /* max-width: 100vw;
+  min-height: 100vh; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
 body {
   max-width: 100vw;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
+  /* height: -webkit-fill-available; */
   font-family: 'Ubuntu', sans-serif;
   background-color: var(--background-dm);
+  font-size: 16px;
   scroll-behavior: smooth;
+}
+
+#root {
+  /* width: 100vw;
+  min-height: 100vh; */
+  width: 100vw;
+  height: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  /* display: flex; */
 }
 
 /* --------------General & Icon Styles--------------- */
@@ -64,7 +90,7 @@ a {
 
 /* --------------Login Styles--------------- */
 .login {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   align-items: center;
@@ -215,7 +241,7 @@ input,
   justify-content: space-between;
   align-items: center;
   margin: 0;
-  padding: 0px 20px;
+  /* padding: 0px 20px; */
   background-color: var(--background-dm);
 }
 
@@ -226,6 +252,7 @@ input,
   font-weight: bolder;
   text-transform: uppercase;
   font-size: 24px;
+  padding-left: 20px;
 }
 
 .menu__toggle {
@@ -239,9 +266,9 @@ input,
   top: -100%;
   left: 0;
   width: 100%;
-  height: 100vh;
+  height: 100%;
   overflow: hidden;
-  padding: 4em;
+  /* padding: 4em; */
   transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -254,6 +281,7 @@ input,
   align-items: center;
   cursor: pointer;
   padding: 4px;
+  padding-right: 20px;
 }
 
 .lineTop,
@@ -353,8 +381,9 @@ ul.menu__links li a {
 
 /* ---------------Dashboard Styles--------------- */
 .dashboard {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+  /*---------------*/
   display: flex;
   align-items: center;
   justify-content: center;
@@ -401,6 +430,7 @@ ul.menu__links li a {
   text-align: center;
   border-radius: 6px;
   border-top: 2px solid var(--secondary);
+  padding-top: 30px;
   /* padding: 30px; */
 }
 
@@ -549,12 +579,21 @@ ul.menu__links li a {
   bottom: 0px;
   width: 50%;
   min-width: 350px;
-  padding: 20px 30px;
+  /* padding: 20px 30px; */
   background-color: var(--background-secondary);
   display: flex;
 }
-.send-message > input {
-  height: 40px;
+
+.send-message__container {
+  width: 100%;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.send-message__container > input {
+  /* height: 40px; */
+  height: 20px;
   padding: 10px 10px;
   border-radius: 5px 0 0 5px;
   border: none;
@@ -564,10 +603,12 @@ ul.menu__links li a {
   font-size: 1rem;
   font-family: 'Ubuntu', sans-serif;
 }
-.send-message > input:placeholder {
+
+.send-message__container > input:placeholder {
   color: var(--background-lm);
 }
-.send-message > :is(input, button):focus {
+
+.send-message__container > :is(input, button):focus {
   outline: none;
   border-bottom: 1px solid #03DAC6;
   font-family: 'Ubuntu', sans-serif;
@@ -646,11 +687,11 @@ button {
 }
 
 .open.modal__open {
-  top: calc(50% - 140px);
+  top: calc(50% - 160px);
 }
 
 .modal__content {
-  height: 70%;
+  height: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -753,6 +794,10 @@ button {
   .login__container {
     width: unset;
   }
+  .reset {
+    max-width: 350px;
+    padding: 0px 30px;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -775,11 +820,6 @@ button {
 }
 
 @media screen and (max-width: 450px) {
-  .confirm {
-    width: 300px;
-    left: calc(50% - 150px);
-  }
-
   .dashboard h2 {
     font-size: 25px;
   }
@@ -818,75 +858,3 @@ button {
     margin-top: 50px;
   }
 }
-
-
-
-/* .dashboard h2 {
-  display: inherit;
-.dashboard__title {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-  padding-bottom: 20px;
-  padding-bottom: 30px;
-  color: var(--background-lm);
-  font-family: 'Ubuntu', sans-serif;
-  font-weight: 400;
-  font-size: 25px;
-}
-
-.dashboard h4 {
-@@ -724,26 +728,19 @@ button {
-  padding: 1rem 4rem;
-}
-
-@media screen and (max-width: 450px) {
-  .confirm {
-    width: 300px;
-    left: calc(50% - 150px);
-  }
-}
-
-@media screen and (max-width: 700px) {
-  ul.menu__links li a,
-  .menu__btn {
-    font-size: 20px;
-  }
-
-  .dashboard h2 {
-    font-size: 15px;
-  }
-
-  .login__container {
-    width: unset;
-  }
-
-  .dashboard__title {
-    margin-top: 50px;
-  }
-}
-
-@media screen and (max-width: 550px) {
-@@ -754,5 +751,19 @@ button {
-  .send-message {
-    width: 100%;
-  }
-
-  .dashboard h2 {
-    font-size: 30px;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .confirm {
-    width: 300px;
-    left: calc(50% - 150px);
-  }
-
-  .dashboard h2 {
-    font-size: 25px;
-  }
-} */

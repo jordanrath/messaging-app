@@ -28,18 +28,20 @@ const SendMessage = () => {
         <label htmlFor='messageInput' hidden>
           Enter Message
         </label>
-        <input
-          id='messageInput'
-          name='messageInput'
-          type='text'
-          className='form-input__input'
-          placeholder='type a message...'
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          autoComplete="off"
-        />
-        <div className='send-message__button-container'>
-          <button className='send-message__button' type='submit'>Send</button>
+        <div className='send-message__container'>
+          <input
+            id='messageInput'
+            name='messageInput'
+            type='text'
+            className='form-input__input'
+            placeholder='type a message...'
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+            autoComplete="off"
+          />
+          <div className='send-message__button-container'>
+            <button className='send-message__button' type='submit'>Send</button>
+          </div>
         </div>
       </form>
     )

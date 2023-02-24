@@ -57,10 +57,10 @@ const Dashboard = () => {
        </Logout>
       </div>
     </div>
-    <div 
+    {/* <div 
       className='overlay'
       // onClick={() => {handleOpenedModal(false)}}
-    />
+    /> */}
     </>
   )
 }
