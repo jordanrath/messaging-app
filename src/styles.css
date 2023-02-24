@@ -729,6 +729,11 @@ button {
 @media screen and (max-width: 550px) {
   .chatroom {
     width: 100%;
+    background-color: var(--background-dm);
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--background-dm);
   }
 
   .send-message {
