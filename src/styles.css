@@ -444,13 +444,13 @@ ul.menu__links li a {
   max-width: 1500px;
   min-width: 350px;
   margin-top: 70px;
-  height: calc(100% - 70px);
+  height: calc(100% - 160px);
   background-color: var(--background-secondary-dm);
 }
 
 .chat-box {
   width: 100%;
-  height: calc(100% - 70px);
+  height: calc(100% - 0px);
   overflow-y: scroll;
 }
 
