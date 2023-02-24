@@ -444,6 +444,15 @@ ul.menu__links li a {
   max-width: 1500px;
   min-width: 350px;
   margin-top: 70px;
+  height: calc(100% - 70px);
+  background-color: var(--background-secondary-dm);
+}
+
+/* .chatroom {
+  width: 50%;
+  max-width: 1500px;
+  min-width: 350px;
+  margin-top: 70px;
   height: calc(100% - 160px);
   background-color: var(--background-secondary-dm);
 }
@@ -451,6 +460,12 @@ ul.menu__links li a {
 .chat-box {
   width: 100%;
   height: calc(100% - 0px);
+  overflow-y: scroll;
+} */
+
+.chat-box {
+  width: 100%;
+  height: calc(100% - 90px);
   overflow-y: scroll;
 }
 

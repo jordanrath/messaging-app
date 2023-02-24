@@ -21,7 +21,7 @@ const Menu = () => {
           <div 
             className="menu__overlay" 
             style={{
-              top: menuOpen ? "0" : "-100%",
+              top: menuOpen ? "0px" : "-120%",
               transitionDelay: menuOpen ? "0s" : "0s",
             }}
           >
