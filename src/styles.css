@@ -614,6 +614,8 @@ ul.menu__links li a {
   align-items: center;
   padding-top: 30px;
   font-size: 45px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
 }
 
 .contact__form {
@@ -631,6 +633,8 @@ input[type=email] {
   border-radius: 6px;
   min-height: 30px;
   font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
 }
 
 textarea[id=message] {
@@ -641,6 +645,8 @@ textarea[id=message] {
   border-radius: 6px;
   resize: none;
   font-size: 20px;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
 }
 
 input[type=text]:focus-visible,
@@ -660,9 +666,18 @@ textarea[id=message]:focus-visible {
   display: inherit;
   justify-content: center;
   align-items: center;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
   height: 50px;
   width: 150px;
   border-radius: 6px;
+  transition: all 0.3s;
+}
+
+.contact__btn:hover {
+  background-color: #03DAC6;
+  cursor: pointer;
 }
 
 /* ---------------Modal Styles--------------- */
