@@ -603,7 +603,7 @@ ul.menu__links li a {
   height: fit-content;
   width: 750px;
   min-width: 290px;
-  background-color: var(--background);
+  background-color: var(--background-secondary);
   border-radius: 6px;
 }
 
