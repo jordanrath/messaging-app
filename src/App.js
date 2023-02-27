@@ -8,6 +8,7 @@ import Login from './Components/Login';
 import Register from './Components/Register';
 import Reset from './Components/Reset';
 import AuthProvider from './Context/AuthProvider';
+import Contact from './Components/Contact';
 
 const App = () => {
 
@@ -32,6 +33,7 @@ const App = () => {
             <Route exact path="/reset" element={<Reset />} />
             <Route exact path="/chatroom" element={<ChatRoom />} />
             <Route exact path="/dashboard" element={<Dashboard />} />
+            <Route exact path="/contact" element={<Contact />} />
           </Routes>
         </Router>
       </AuthProvider>

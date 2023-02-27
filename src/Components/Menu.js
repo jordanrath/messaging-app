@@ -50,8 +50,9 @@ const Menu = () => {
                 <div className='menu__item__wrapper'></div>
               </li>
               <li className='menu__item'>
-                  <button
+                  <Link
                     className='menu__btn'
+                    to='/contact'
                     onClick={() => setMenuOpen(!menuOpen)}
                     style={{
                       top: menuOpen ? "0" : "120px",
@@ -59,7 +60,7 @@ const Menu = () => {
                     }}
                   >
                     Contact
-                  </button>
+                  </Link>
                 <div className='menu__item__wrapper'></div>              
               </li>
             </ul>
