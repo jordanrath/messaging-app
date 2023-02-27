@@ -6,6 +6,7 @@ import {
     registerWithEmailAndPassword,
     signInWithGoogle,
 } from '../Firebase';
+import Menu from './Menu';
 
 const Register = () => {
     const [email, setEmail] = useState("");
@@ -25,46 +26,49 @@ const Register = () => {
     }, [user, loading, navigate]);
 
   return (
-    <div className='register'>
-        <div className='register__container'>
-            <input 
-                type='text'
-                className='register__textbox'
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-                placeholder='Full Name'
-            />
-            <input 
-                type='text'
-                className='register__textbox'
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                placeholder='E-mail Address'
-            />
-            <input 
-                type='password'
-                className='register__textbox'
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-                placeholder='Password'
-            />
-            <button 
-                className='register__btn'
-                onClick={register}
-            >
-                Register
-            </button>
-            <button
-                className='register__btn register__google'
-                onClick={signInWithGoogle}
-            >
-                Register with Google
-            </button>
-            <div>
-                Already have an account? <Link to='/'>Login</Link> now.
+    <>
+        <Menu />
+        <div className='register'>
+            <div className='register__container'>
+                <input 
+                    type='text'
+                    className='register__textbox'
+                    value={name}
+                    onChange={(event) => setName(event.target.value)}
+                    placeholder='Full Name'
+                />
+                <input 
+                    type='text'
+                    className='register__textbox'
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                    placeholder='E-mail Address'
+                />
+                <input 
+                    type='password'
+                    className='register__textbox'
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                    placeholder='Password'
+                />
+                <button 
+                    className='register__btn'
+                    onClick={register}
+                >
+                    Register
+                </button>
+                <button
+                    className='register__btn register__google'
+                    onClick={signInWithGoogle}
+                >
+                    Register with Google
+                </button>
+                <div>
+                    Already have an account? <Link to='/'>Login</Link> now.
+                </div>
             </div>
         </div>
-    </div>
+    </>
   )
 };
 

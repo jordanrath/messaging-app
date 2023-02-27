@@ -5,6 +5,7 @@ import { auth, db } from "../Firebase";
 import { query, collection, getDocs, where } from "firebase/firestore";
 import Modal from "./Modal";
 import Logout from "./Logout";
+import Menu from "./Menu";
 
 const Dashboard = () => {
     const [user, loading] = useAuthState(auth);
@@ -33,34 +34,35 @@ const Dashboard = () => {
 
   return (
     <>
-    <div className="dashboard">
-      <div className="dashboard__title">
-        <h2>Welcome to your Chatroom</h2>
-        <h2> account, {name}</h2>
+      <Menu />
+      <div className="dashboard">
+        <div className="dashboard__title">
+          <h2>Welcome to your Chatroom</h2>
+          <h2> account, {name}</h2>
+        </div>
+        <div className="dashboard__container">
+            <Modal title='Account Info' name={name} email={user?.email} />   
+          <button className="dashboard__btn" onClick={() => navigate('/chatroom')}>
+            <span className="material-symbols-outlined">
+              chat
+            </span>
+            <h4>Chatroom</h4>
+          </button>
+          <button className="dashboard__btn" onClick={() => navigate('/reset')}>
+            <span className="material-symbols-outlined">
+              lock_reset
+            </span>
+            <h4>Reset Password</h4>
+          </button>
+         <Logout className="dashboard__btn">
+            <span className="material-symbols-outlined">logout</span>
+         </Logout>
+        </div>
       </div>
-      <div className="dashboard__container">
-          <Modal title='Account Info' name={name} email={user?.email} />   
-        <button className="dashboard__btn" onClick={() => navigate('/chatroom')}>
-          <span className="material-symbols-outlined">
-            chat
-          </span>
-          <h4>Chatroom</h4>
-        </button>
-        <button className="dashboard__btn" onClick={() => navigate('/reset')}>
-          <span className="material-symbols-outlined">
-            lock_reset
-          </span>
-          <h4>Reset Password</h4>
-        </button>
-       <Logout className="dashboard__btn">
-          <span className="material-symbols-outlined">logout</span>
-       </Logout>
-      </div>
-    </div>
-    {/* <div 
-      className='overlay'
-      // onClick={() => {handleOpenedModal(false)}}
-    /> */}
+      {/* <div 
+        className='overlay'
+        // onClick={() => {handleOpenedModal(false)}}
+      /> */}
     </>
   )
 }
