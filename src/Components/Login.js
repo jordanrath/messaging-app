@@ -20,8 +20,8 @@ const Login = () => {
 
   return (
     <>
-        <Menu />
         <div className='login'>
+        <Menu />
             <div className='login__container'>
                 <form className='login__form' autoComplete='on'>
                     <input
