@@ -6,38 +6,67 @@ const Contact = () => {
     <>
         <Menu />
         <section className='contact-section' id='contact' data-aos='zoom-in-up'>
-            <h1>Contact Us</h1>
-            <h3>Any questions or comments?  Just write us a message!</h3>
+            <div className="contact-section__title">
+                <h1>Contact Us</h1>
+                <h3>Any questions or comments?  Just write us a message!</h3>
+            </div>
             <div className='contact__header-bar'></div>
             <div className='contact__form-container'>
                 <div className='contact__form-sidecontent'>
-                    <h2>Contact Information</h2>
-                    <span class="material-symbols-outlined">
-                        call
-                    </span>
-                    <span class="material-symbols-outlined">
-                        mail
-                    </span>
-                    <span class="material-symbols-outlined">
-                        location_on
-                    </span>
+                    <div className="contact__sidecontent-title">
+                        <h2>Contact Information</h2>
+                        <p>Fill out the form and our team will get back to you as soon as possible.</p>
+                    </div>
+                    <div className='contact__form-info'>
+                        <span className="material-symbols-outlined icon__filled">
+                            call
+                        </span>
+                        <p>+0123 4567 8910</p>
+                    </div>
+                    <div className="contact__form-info">
+                        <span className="material-symbols-outlined icon__filled">
+                            mail
+                        </span>
+                        <p>chatroom@testemail.com</p>
+                    </div>
+                    <div className="contact__form-info">
+                        <span className="material-symbols-outlined icon__filled">
+                            location_on 
+                        </span>
+                        <p>123 Chatroom St</p>
+                    </div>
                 </div>
                 <form className='contact__form' action="https://formsubmit.co/rath.jordan@icloud.com" method="POST">
-                    <label>
-                        <input type='text' id='name' placeholder='First Name' name='name' required />
-                    </label>
-                    <label>
-                        <input type='text' id='name' placeholder='Last Name' name='name' required />
-                    </label>
-                    <label>
-                        <input type='email' id='email' placeholder='Email' name='email' required/>
-                    </label>
-                    <label>
-                        <input type='text' id='phone' placeholder='Phone' name='phone'/>
-                    </label>
-                    <label>
-                        <textarea id='message' name='message' placeholder='Your Message' required />
-                    </label>
+                    <div className="contact__form-title">
+                        <p>First Name</p>
+                        <label>
+                            <input type='text' id='name' placeholder='John' name='name' required />
+                        </label>
+                    </div>
+                    <div className="contact__form-title">
+                        <p>Last Name</p>
+                        <label>
+                            <input type='text' id='name' placeholder='Doe' name='name' required />
+                        </label>
+                    </div>
+                    <div className="contact__form-title">
+                        <p>Email</p>
+                        <label>   
+                            <input type='email' id='email' placeholder='Enter an email...' name='email' required/>
+                        </label>
+                    </div>
+                    <div className="contact__form-title">
+                        <p>Phone</p>
+                        <label>           
+                            <input type='text' id='phone' placeholder='Enter a phone number...' name='phone'/>
+                        </label>
+                    </div>
+                    <div className="contact__form-title">
+                        <p>Message</p>
+                        <label>
+                            <textarea id='message' name='message' placeholder='Write us a message...' required />
+                        </label>
+                    </div>
                     <div className='contact__btn-container'>
                         <button type='submit' className='contact__btn'>Submit Message</button>
                     </div>    
