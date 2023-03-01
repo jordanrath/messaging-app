@@ -1,0 +1,11 @@
+email validation
+phone validation
+name character limits
+message character limits with counter
+rate limiting on messages in chat
+adding color to contact info
+profanity filter
+expiring messages
+static welcome message
+light mode
+optimize contact for mobile
