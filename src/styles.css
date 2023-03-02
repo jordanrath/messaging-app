@@ -1053,7 +1053,6 @@ button {
 
   .contact__sidecontent-footer {
     justify-content: center;
-    gap: 50px;
   }
 
   .contact__btn {
@@ -1088,6 +1087,10 @@ button {
 
   .dashboard h2 {
     font-size: 30px;
+  }
+
+  .contact__sidecontent-footer {
+    gap: 0px;
   }
 }
 
