@@ -409,7 +409,7 @@ ul.menu__links li a {
   align-items: center;
   gap: 20px;
   padding: 10px;
-  font-size: 18px;
+  font-size: 25px;
   margin-top: 10px;
   width: 300px;
   height: 100px;
@@ -420,6 +420,7 @@ ul.menu__links li a {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   cursor: pointer;
+  transition: all 0.5s;
 }
 
 .dashboard__btn:hover {
@@ -686,7 +687,7 @@ ul.menu__links li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 55px;
+  gap: 25px;
   height: 100%;
   transition: all 0.5s;
 }
@@ -771,6 +772,21 @@ ul.menu__links li a {
   flex-grow: 1;
   flex-shrink: 0;
   color: whitesmoke;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: none;
+  -webkit-text-fill-color: whitesmoke;
+  -webkit-box-shadow: 0 0 0px 1000px var(--background-secondary) inset;
+  transition: background-color 5000s ease-in-out 0s;
 }
 
 .contact__form-title [type=text],

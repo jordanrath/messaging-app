@@ -57,6 +57,12 @@ const Dashboard = () => {
          <Logout className="dashboard__btn">
             <span className="material-symbols-outlined">logout</span>
          </Logout>
+         <button className="dashboard__btn" onClick={() => navigate('/contact')}>
+            <span className="material-symbols-outlined">
+              contact_mail
+            </span>
+            <h4>Contact Us!</h4>
+          </button>
         </div>
       </div>
       {/* <div 

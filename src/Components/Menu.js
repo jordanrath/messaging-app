@@ -26,7 +26,7 @@ const Menu = () => {
             }}
           >
             <ul className='menu__links'>
-              <li className='menu__item'>
+              <li className='menu__item1'>
                 <Link
                   to='/dashboard'
                   onClick={() => setMenuOpen(!menuOpen)}
@@ -39,7 +39,7 @@ const Menu = () => {
                 </Link>
                 <div className='menu__item__wrapper'></div>
               </li>
-              <li className='menu__item'>
+              <li className='menu__item2'>
                   <Logout
                     className='menu__btn'
                     style={{
@@ -49,7 +49,7 @@ const Menu = () => {
                   />
                 <div className='menu__item__wrapper'></div>
               </li>
-              <li className='menu__item'>
+              <li className='menu__item3'>
                   <Link
                     className='menu__btn'
                     to='/contact'
