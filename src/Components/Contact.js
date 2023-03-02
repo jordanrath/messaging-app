@@ -41,11 +41,12 @@ const Contact = () => {
                                 <p>123 Chatroom St</p>
                             </div>
                             <div className='contact__sidecontent-footer'>
-                                <a id='profile-link' className='contact-info' href='https://facebook.com/' target='_blank' rel='noreferrer'><FontAwesomeIcon icon={['fab', 'facebook-f']} /></a>
-                                <a id='profile-link' className='contact-info' href='https://instagram.com/' target='_blank' rel='noreferrer'><FontAwesomeIcon icon={['fab', 'instagram']} /></a>
-                                <a id='profile-link' className='contact-info' href='https://twitter.com/' target='_blank' rel='noreferrer'><FontAwesomeIcon icon={['fab', 'twitter']} /></a>
-                                <a id='profile-link' className='contact-info' href="https://www.linkedin.com/in/jordan-rath-75234a249/" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={['fab', 'linkedin-in']} /></a>
+                                <a id='profile-link' className='contact-info1' href='https://facebook.com/' target='_blank' rel='noreferrer'><FontAwesomeIcon icon={['fab', 'facebook-f']} /></a>
+                                <a id='profile-link' className='contact-info2' href='https://instagram.com/' target='_blank' rel='noreferrer'><FontAwesomeIcon icon={['fab', 'instagram']} /></a>
+                                <a id='profile-link' className='contact-info3' href='https://twitter.com/' target='_blank' rel='noreferrer'><FontAwesomeIcon icon={['fab', 'twitter']} /></a>
+                                <a id='profile-link' className='contact-info4' href="https://www.linkedin.com/in/jordan-rath-75234a249/" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={['fab', 'linkedin-in']} /></a>
                             </div>
+                            {/* <div className="contact__shapes"></div> */}
                         </div>
                         <form className='contact__form' action="https://formsubmit.co/rath.jordan@icloud.com" method="POST">
                             <div className="contact__form-title">
