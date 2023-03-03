@@ -1103,6 +1103,10 @@ button {
   .dashboard h2 {
     font-size: 25px;
   }
+
+  .contact-section__container {
+    padding: 150px 10px 10px;
+  }
 }
 
 @media screen and (max-width: 300px) {
