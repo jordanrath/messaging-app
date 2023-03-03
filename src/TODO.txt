@@ -8,4 +8,5 @@ profanity filter
 expiring messages
 static welcome message
 light mode
-optimize contact for mobile
+---enable google auth
+---optimize contact for mobile 
