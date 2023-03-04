@@ -5,6 +5,11 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const Message = ({ message }) => {
     const [user] = useAuthState(auth);
 
+    const Filter = require('bad-words'),
+        filter = new Filter({splitRegex: /(?:(?=[a-zA-Z0-9]))(?<![a-zA-Z0-9])|(?<=[a-zA-Z0-9])(?![a-zA-Z0-9])/});
+        filter.removeWords('hell', 'butt', 'poop', 'fart');
+        const filteredMessage = (filter.isProfane(message.text) ? filter.clean(message.text) : message.text);
+
   return (
     <div
         id='chat-bubble'
@@ -24,7 +29,7 @@ const Message = ({ message }) => {
         }
         <div className='chat-bubble__right'>
             <p className='user-name'>{message.name || "User"}</p>
-            <p className='user-message'>{message.text}</p>
+            <p className='user-message'>{filteredMessage}</p>
         </div>
     </div>
   )
