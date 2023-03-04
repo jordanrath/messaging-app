@@ -23,26 +23,29 @@ const SendMessage = () => {
     setMessage("");    
   }
 
+  const Filter = require('bad-words'),
+  filter = new Filter({splitRegex: /(?:(?=[a-zA-Z0-9]))(?<![a-zA-Z0-9])|(?<=[a-zA-Z0-9])(?![a-zA-Z0-9])/});
+  filter.removeWords('hell', 'butt', 'poop', 'fart');
+  const filteredMessage = (filter.isProfane(message) ? filter.clean(message) : message);
+
     return (
       <form onSubmit={(e) => sendMessage(e)} className='send-message'>
         <label htmlFor='messageInput' hidden>
           Enter Message
         </label>
-        {/* <div className='send-message__container'> */}
           <input
             id='messageInput'
             name='messageInput'
             type='text'
             className='form-input__input'
             placeholder='type a message...'
-            value={message}
+            value={filteredMessage}
             onChange={(e) => setMessage(e.target.value)}
             autoComplete="off"
           />
           <div className='send-message__button-container'>
             <button className='send-message__button' type='submit'>Send</button>
           </div>
-        {/* </div> */}
       </form>
     )
   }
