@@ -837,9 +837,9 @@ select:-webkit-autofill:focus {
   transition: all 0.8s;
 }
 
-input[type=text]:focus-visible,
-input[type=email]:focus-visible,
-textarea[id=message]:focus-visible {
+.contact__form-title input[type=text]:focus-visible,
+.contact__form-title input[type=email]:focus-visible,
+.contact__form-title textarea[id=message]:focus-visible {
   outline: none;
   border-bottom: 2px solid var(--secondary);
 }
