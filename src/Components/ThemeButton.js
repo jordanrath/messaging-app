@@ -4,6 +4,9 @@ import { ThemeContext, themes } from '../Context/ThemeContext';
 const ThemeButton = () => {
     const [darkMode, setDarkMode] = useState(false);
 
+    const lm = <span className="material-symbols-outlined icon__bold">light_mode</span>; 
+    const dm =  <span className="material-symbols-outlined icon__bold">dark_mode</span>;
+
   return (
     <>
         <ThemeContext.Consumer>
@@ -15,7 +18,7 @@ const ThemeButton = () => {
                   changeTheme(darkMode ? themes.dark : themes.light);
                 }}
               >
-                  <span className="d-lg-none d-md-block">Switch mode</span>
+                <span className='theme__toggle'>{darkMode ? dm : lm}</span>
               </button>
             )}
         </ThemeContext.Consumer>

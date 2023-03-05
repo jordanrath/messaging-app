@@ -11,14 +11,16 @@ const Menu = () => {
         <div className="menu__container">
           <div className="menu__nav">
             <div className="logo">The ChatRoom</div>
-            <div className='theme-btn__container'>
-              <ThemeButton />
-            </div>
-              <div className="menu__toggle" onClick={() => setMenuOpen(!menuOpen)}>
-                <div className='lineContainer'>
-                  <div className={menuOpen ? "lineTop spin" : "lineTop"}></div>
-                  <div className={menuOpen ? "lineMiddle slide-out" : "lineMiddle"}></div>
-                  <div className={menuOpen ? "lineBottom spin" : "lineBottom"}></div>
+            <div className="menu__side">
+                <div className="theme-btn__container">
+                  <ThemeButton />
+                </div>
+                <div className="menu__toggle" onClick={() => setMenuOpen(!menuOpen)}>
+                  <div className='lineContainer'>
+                    <div className={menuOpen ? "lineTop spin" : "lineTop"}></div>
+                    <div className={menuOpen ? "lineMiddle slide-out" : "lineMiddle"}></div>
+                    <div className={menuOpen ? "lineBottom spin" : "lineBottom"}></div>
+                  </div>
                 </div>
               </div>
             </div>
