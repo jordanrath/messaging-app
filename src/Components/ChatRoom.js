@@ -10,7 +10,7 @@ import { db } from '../Firebase';
 import Message from './Message';
 import SendMessage from './SendMessage';
 import Menu from './Menu';
-import WelcomeMessage from './WelcomeMessage';
+// import WelcomeMessage from './WelcomeMessage';
 
 const ChatRoom = () => {
   const [messages, setMessages] = useState([]);
