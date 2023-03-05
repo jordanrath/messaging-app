@@ -1299,6 +1299,10 @@ button {
 }
 
 /* ---------------Light Mode ChatRoom Styles--------------- */
+.light-mode .chatroom {
+  background-color: var(--background-lm);
+}
+
 .light-mode .chat-box {
   background-color: var(--background-lm);
 }
