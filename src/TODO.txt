@@ -14,3 +14,5 @@ add emoji bar
 add first name to contact form
 ---enable google auth
 ---optimize contact for mobile 
+change styles of input in dm for login and register
+add box shadows

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Logout from './Logout';
+import ThemeButton from './ThemeButton';
 
 const Menu = () => {
     const [menuOpen, setMenuOpen] = useState(false);
@@ -10,6 +11,9 @@ const Menu = () => {
         <div className="menu__container">
           <div className="menu__nav">
             <div className="logo">The ChatRoom</div>
+            <div className='theme-btn__container'>
+              <ThemeButton />
+            </div>
               <div className="menu__toggle" onClick={() => setMenuOpen(!menuOpen)}>
                 <div className='lineContainer'>
                   <div className={menuOpen ? "lineTop spin" : "lineTop"}></div>

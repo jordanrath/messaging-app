@@ -12,6 +12,7 @@
   margin: 0;
   padding: 0;
   --primary: #BB86FC;
+  --primary-lm: #6200EE;
   --primary-variant: #3700B3;
   --secondary: #03DAC6;
   --secondary-variant: #018786;
@@ -19,7 +20,11 @@
   --background-secondary: #282828;
   --background-dm: #181818;
   --background-secondary-dm: #121212;
-  --background-lm: #ffffff;
+  --background-lm: #FFFFFF;
+  --background-secondary-lm: #eeeeee;
+  --on-primary: #FFFFFF;
+  --on-secondary: #000000;
+  --on-error: #FFFFFF;
   --error-dm: #CF6679;
   --error-lm: #B00020;
 }
@@ -72,6 +77,50 @@ a {
   font-size: 50px;
 }
 
+/* --------------Login, Reset, Register Form Input Styles--------------- */
+/* input {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+} */
+
+input[type=text],
+input[type=email],
+input[type=password],
+.login__textBox,
+.reset__textBox,
+.register__textBox {
+  outline: 0;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px solid var(--background);
+  background-color: var(--background-secondary);
+  border-radius: 0;
+  padding: 0px 10px;
+  min-width: 250px;
+  height: 40px;
+  font-size: 20px;
+  color: var(--on-primary);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 400;
+  margin: 0;
+  transition: all 0.8s;
+}
+
+input[type=email]:focus-visible,
+input[type=password]:focus-visible,
+input[type=text]:focus-visible {
+  outline: none;
+  border-bottom: 2px solid var(--secondary);
+}
+
+input[type=email],
+.login__textBox:focus-visible {
+  outline: none;
+  border-bottom: 2px solid var(--secondary);
+}
+
 /* --------------Login Styles--------------- */
 .login {
   height: 100vh;
@@ -85,9 +134,10 @@ a {
   width: auto;
   height: auto;
   display: flex;
+  gap: 10px;
   flex-direction: column;
   text-align: center;
-  background-color: var(--background);
+  background-color: var(--background-secondary);
   border-radius: 6px;
   padding: 30px;
 }
@@ -95,20 +145,12 @@ a {
 .login__form {
   display: flex;
   flex-direction: column;
-}
-
-input,
-.login__textBox {
-  padding: 10px;
-  font-size: 18px;
-  margin-bottom: 10px;
-  border-radius: 6px;
+  gap: 10px;
 }
 
 .login__btn {
   padding: 10px;
   font-size: 18px;
-  margin-bottom: 10px;
   border: none;
   border-radius: 6px;
   color: #FFFFFF;
@@ -139,27 +181,21 @@ input,
 .register__container {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   text-align: center;
   background-color: var(--background);
   padding: 30px;
   border-radius: 6px;
 }
 
-input,
-.register__textBox {
-  padding: 10px;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
 .register__btn {
   padding: 10px;
   font-size: 18px;
-  margin-bottom: 10px;
   border: none;
   border-radius: 6px;
-  color: white;
+  color: var(--on-primary);
   background-color: var(--background-secondary-dm);
+  cursor: pointer;
 }
 
 .register__google {
@@ -182,27 +218,21 @@ input,
 .reset__container {
   display: flex;
   flex-direction: column;
+  gap: 10px;
   text-align: center;
-  background-color: var(--background);
+  background-color: var(--background-secondary);
   padding: 30px;
   border-radius: 6px;
-}
-
-input,
-.reset__textBox {
-  padding: 10px;
-  font-size: 18px;
-  margin-bottom: 10px;
 }
 
 .reset__btn {
   padding: 10px;
   font-size: 18px;
-  margin-bottom: 10px;
   border: none;
   border-radius: 6px;
   color: var(--background-lm);
   background-color: var(--background-secondary-dm);
+  cursor: pointer;
 }
 
 .reset div {
@@ -632,7 +662,7 @@ ul.menu__links li a {
 }
 
 .contact-section h1 {
-  color: whitesmoke;
+  color: var(--on-primary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -643,7 +673,7 @@ ul.menu__links li a {
 }
 
 .contact-section h3 {
-  color: whitesmoke;
+  color: var(--on-primary);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -667,7 +697,7 @@ ul.menu__links li a {
   flex-grow: 2;
   gap: 50px;
   background-color: var(--primary);
-  color: whitesmoke;
+  color: var(--on-primary);
   font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   border-radius: 6px;
@@ -713,7 +743,7 @@ ul.menu__links li a {
 }
 
 .contact__sidecontent-footer a {
-  color: whitesmoke;
+  color: var(--on-primary);
   font-size: 20px;
 }
 
@@ -722,25 +752,12 @@ ul.menu__links li a {
   color: var(--primary-variant);
 }
 
-/* .contact__shapes {
-  position: absolute;
-  top: 650px;
-  left: 250px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-end;
-  height: 150px;
-  width: 150px;
-  border-radius: 100vw;
-  background-color: red;
-} */
-
 .contact__form-title {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
   flex-shrink: 0;
-  color: whitesmoke;
+  color: var(--on-primary);
 }
 
 .contact__form-title h2 {
@@ -770,7 +787,7 @@ ul.menu__links li a {
   justify-content: flex-start;
   flex-grow: 1;
   flex-shrink: 0;
-  color: whitesmoke;
+  color: var(--on-primary);
 }
 
 input:-webkit-autofill,
@@ -782,8 +799,8 @@ textarea:-webkit-autofill:focus,
 select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
-  border: none;
-  -webkit-text-fill-color: whitesmoke;
+  /* border: none; */
+  -webkit-text-fill-color: var(--on-primary);
   -webkit-box-shadow: 0 0 0px 1000px var(--background-secondary) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
@@ -805,7 +822,7 @@ select:-webkit-autofill:focus {
   min-width: 250px;
   height: 40px;
   font-size: 20px;
-  color: whitesmoke;
+  color: var(--on-primary);
   font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   margin: 0;
@@ -830,7 +847,7 @@ select:-webkit-autofill:focus {
   resize: none;
   text-overflow: ellipsis;
   font-size: 20px;
-  color: whitesmoke;
+  color: var(--on-primary);
   font-family: 'Ubuntu', sans-serif;
   font-weight: 400;
   margin: 0;
@@ -862,7 +879,7 @@ select:-webkit-autofill:focus {
   border-radius: 6px;
   transition: all 0.5s;
   margin: 0;
-  color: whitesmoke;
+  color: var(--on-primary);
   background-color: var(--primary);
 }
 
@@ -988,6 +1005,7 @@ button {
   cursor: pointer;
   padding: 1rem 4rem;
 }
+
 @media screen and (max-width: 1250px) {
   .contact__form-container {
     height: unset;
@@ -1141,4 +1159,237 @@ button {
   .dashboard__title {
     margin-top: 50px;
   }
+}
+
+
+/* ---------------Light Mode Styles--------------- */
+.light-mode {
+  background-color: var(--background-secondary-lm);
+}
+
+/* ---------------Light Mode Top Menu Styles--------------- */
+.light-mode .menu__nav {
+  background-color: var(--primary-lm);
+}
+
+.light-mode .lineTop,
+.light-mode .lineMiddle,
+.light-mode .lineBottom {
+  background-color: var(--on-primary);
+}
+
+.theme-btn:hover {
+  cursor: pointer;
+}
+
+/* ---------------Light Mode Top Menu Overlay Styles--------------- */
+.light-mode .menu__overlay,
+.light-mode .menu__item__wrapper,
+.light-mode .menu__btn{
+  background-color: var(--background-lm);
+  color: var(--on-secondary);
+}
+
+.light-mode ul.menu__links li a {
+  color: var(--on-secondary);
+}
+
+/* ---------------Light Mode Login Styles--------------- */
+.light-mode .login .menu__nav {
+  background-color: var(--background-secondary-lm);
+}
+
+.light-mode .login__container {
+  background-color: var(--background-lm);
+}
+
+.light-mode .login__btn {
+  background-color: var(--primary-lm);
+}
+
+.light-mode .login__google {
+  background-color: var(--secondary-variant);
+}
+
+/* ---------------Light Mode Register Styles--------------- */
+.light-mode .register__container {
+  background-color: var(--background-lm);
+}
+
+.light-mode .register__btn {
+  background-color: var(--primary-lm);
+}
+
+.light-mode .register__google {
+  background-color: var(--secondary-variant);
+}
+
+.light-mode input[type=text],
+.light-mode input[type=email],
+.light-mode input[type=password],
+.light-mode .login__textBox,
+.light-mode .reset__textBox,
+.light-mode .register__textBox {
+  background-color: var(--background-lm);
+  border-bottom: 2px solid var(--background-secondary-lm);
+  color: var(--on-secondary);
+}
+
+.light-mode input[type=email]:focus-visible,
+.light-mode input[type=password]:focus-visible,
+.light-mode input[type=text]:focus-visible {
+  outline: none;
+  border-bottom: 2px solid var(--secondary);
+}
+
+.light-mode input[type=email],
+.light-mode .login__textBox:focus-visible {
+  outline: none;
+  border-bottom: 2px solid var(--secondary);
+}
+
+.light-mode input:-webkit-autofill,
+.light-mode input:-webkit-autofill:hover, 
+.light-mode input:-webkit-autofill:focus,
+.light-mode textarea:-webkit-autofill,
+.light-mode textarea:-webkit-autofill:hover,
+.light-mode textarea:-webkit-autofill:focus,
+.light-mode select:-webkit-autofill,
+.light-mode select:-webkit-autofill:hover,
+.light-mode select:-webkit-autofill:focus {
+  /* border: none; */
+  -webkit-text-fill-color: var(--on-secondary);
+  -webkit-box-shadow: 0 0 0px 1000px var(--background-lm) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ---------------Light Mode Reset Styles--------------- */
+.light-mode .reset__container {
+  background-color: var(--background-lm);
+}
+
+.light-mode .reset__btn {
+  background-color: var(--primary-lm);
+}
+
+/* ---------------Light Mode ChatRoom Styles--------------- */
+.light-mode .chat-box {
+  background-color: var(--background-lm);
+}
+
+.light-mode .chat-bubble {
+  background-color: var(--secondary);
+}
+
+.light-mode .chat-bubble.right  {
+  background-color: var(--background-secondary-lm);
+}
+
+.light-mode .user-name,
+.light-mode .user-message,
+.light-mode .user-avatar {
+  color: var(--on-secondary);
+}
+
+.light-mode .send-message {
+  background-color: var(--primary-lm);
+}
+
+.light-mode .send-message > input {
+  background-color: var(--background-lm);
+  color: var(--on-secondary);
+}
+
+/* ---------------Light Mode Dashboard Styles--------------- */
+.light-mode .dashboard {
+  background-color: var(--background-lm);
+}
+
+.light-mode .dashboard__title {
+  color: var(--on-secondary);
+} 
+
+.light-mode .dashboard__container {
+  border-top: 2px solid var(--primary-variant);
+}
+
+.light-mode .dashboard__btn {
+  background-color: var(--primary-lm);
+}
+
+.light-mode .dashboard__btn:hover {
+  background-color: var(--secondary-variant);
+}
+
+/* ---------------Light Mode Scrollbar Styles--------------- */
+/* ---Scrollbar Styles--- */
+.light-mode ::-webkit-scrollbar {
+  width: 7px;
+}
+
+/* ---Add color change on mouse wheel scroll --- */
+.light-mode ::-webkit-scrollbar-track {
+  background: var(--background-lm);
+}
+
+.light-mode ::-webkit-scrollbar-thumb {
+  background: var(--background);
+  border-radius: 10px;
+}
+
+.light-mode ::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* ---------------Light Mode Contact Styles--------------- */
+.light-mode .contact-section__container {
+  background-color: var(--background-secondary-lm);
+}
+
+.light-mode .contact-section h1,
+.light-mode .contact-section h3 {
+  color: var(--on-secondary);
+}
+
+.light-mode .contact__form-container {
+  background-color: var(--background-lm);
+}
+
+.light-mode .contact__form-title {
+  color: var(--on-secondary);
+}
+
+.light-mode .contact__form-sidecontent,
+.light-mode .contact__btn {
+  background-color: var(--primary-lm);
+}
+
+.light-mode .contact-info1,
+.light-mode .contact-info2,
+.light-mode .contact-info3,
+.light-mode .contact-info4 {
+  background-color: var(--primary-lm);
+}
+
+.light-mode .contact-info1:hover,
+.light-mode .contact-info2:hover,
+.light-mode .contact-info3:hover,
+.light-mode .contact-info4:hover {
+  background-color: var(--secondary);
+}
+
+.light-mode .contact__form-title [type=text], 
+.light-mode .contact__form-title [type=email],
+.light-mode .contact__form-title [id=message] {
+  background-color: var(--background-lm);
+  border-bottom: 2px solid var(--background-secondary-lm);
+  color: var(--on-secondary);
+}
+
+.light-mode .material-symbols-outlined.icon__filled {
+  color: var(--primary);
+}
+
+.light-mode .contact__btn:hover {
+  background-color: var(--secondary);
 }

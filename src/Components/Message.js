@@ -8,6 +8,7 @@ const Message = ({ message }) => {
     const Filter = require('bad-words'),
         filter = new Filter({splitRegex: /(?:(?=[a-zA-Z0-9]))(?<![a-zA-Z0-9])|(?<=[a-zA-Z0-9])(?![a-zA-Z0-9])/});
         filter.removeWords('hell', 'butt', 'poop', 'fart');
+        filter.addWords('nig');
         const filteredMessage = (filter.isProfane(message.text) ? filter.clean(message.text) : message.text);
 
   return (
