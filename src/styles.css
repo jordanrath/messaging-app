@@ -103,12 +103,6 @@ a {
 }
 
 /* --------------Login, Reset, Register Form Input Styles--------------- */
-/* input {
-  padding: 10px;
-  font-size: 18px;
-  margin-bottom: 10px;
-} */
-
 input[type=text],
 input[type=email],
 input[type=password],
@@ -296,6 +290,12 @@ input[type=email],
 .menu__side {
   display: flex;
   gap: 30px;
+}
+
+.theme-btn__container {
+  display: flex;
+  justify-content: center;
+  align-items: ;
 }
 
 .menu__overlay {

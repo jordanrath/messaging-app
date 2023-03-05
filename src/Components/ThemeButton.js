@@ -17,6 +17,9 @@ const ThemeButton = () => {
                   setDarkMode(!darkMode); 
                   changeTheme(darkMode ? themes.dark : themes.light);
                 }}
+                // style={{
+                //   transitionDelay: lm ? "0.8s" : "0s",
+                // }}
               >
                 <span className='theme__toggle'>{darkMode ? dm : lm}</span>
               </button>
