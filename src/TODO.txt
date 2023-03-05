@@ -4,7 +4,9 @@ name character limits
 message character limits with counter
 rate limiting on messages in chat
 adding color to contact info
-profanity filter
+---profanity filter in chatroom
+---profanity filter username
+---hook up form submit
 expiring messages
 static welcome message
 light mode

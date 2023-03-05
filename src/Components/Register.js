@@ -15,9 +15,15 @@ const Register = () => {
     const [user, loading] = useAuthState(auth);
     const navigate = useNavigate();
 
+    const Filter = require('bad-words'),
+        filter = new Filter({splitRegex: /(?:(?=[a-zA-Z0-9]))(?<![a-zA-Z0-9])|(?<=[a-zA-Z0-9])(?![a-zA-Z0-9])/});
+
     const register = () => {
-        if (!name) alert("Please enter name");
-        registerWithEmailAndPassword(name, email, password);
+        if (filter.isProfane(name)) {
+            alert("Please enter a more appropriate name")
+        } else if (!name) {
+            alert("Please enter name")
+        } else registerWithEmailAndPassword(name, email, password);
     };
 
     useEffect(() => {
