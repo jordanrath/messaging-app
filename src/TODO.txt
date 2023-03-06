@@ -3,17 +3,18 @@ phone validation
 name character limits
 message character limits with counter
 rate limiting on messages in chat
+expiring messages
+add emoji bar
+add first name to contact form
+add box shadows
+check register.js to set names correctly
+create thank you menu for contact form
 ---adding color to contact info
 ---profanity filter in chatroom
 ---profanity filter username
 ---hook up form submit
-expiring messages
----static welcome message
---light mode
-add emoji bar
-add first name to contact form
 ---enable google auth
 ---optimize contact for mobile 
 --change styles of input in dm for login and register
-add box shadows
-check register.js to set names correctly
+---static welcome message
+--light mode
