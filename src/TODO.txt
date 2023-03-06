@@ -9,7 +9,7 @@ rate limiting on messages in chat
 ---hook up form submit
 expiring messages
 static welcome message
-light mode
+--light mode
 add emoji bar
 add first name to contact form
 ---enable google auth

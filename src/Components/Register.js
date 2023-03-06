@@ -16,7 +16,7 @@ const Register = () => {
     const navigate = useNavigate();
 
     const Filter = require('bad-words'),
-        filter = new Filter({splitRegex: /(?:(?=[a-zA-Z0-9]))(?<![a-zA-Z0-9])|(?<=[a-zA-Z0-9])(?![a-zA-Z0-9])/});
+        filter = new Filter();
 
     const register = () => {
         if (filter.isProfane(name)) {

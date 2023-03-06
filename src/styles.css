@@ -295,7 +295,7 @@ input[type=email],
 .theme-btn__container {
   display: flex;
   justify-content: center;
-  align-items: ;
+  align-items: center;
 }
 
 .menu__overlay {
