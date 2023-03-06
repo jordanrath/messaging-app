@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import HamburgerMenu from './HamburgerMenu';
 import Logout from './Logout';
 import ThemeButton from './ThemeButton';
 
@@ -15,13 +16,7 @@ const Menu = () => {
                 <div className="theme-btn__container">
                   <ThemeButton />
                 </div>
-                <div className="menu__toggle" onClick={() => setMenuOpen(!menuOpen)}>
-                  <div className='lineContainer'>
-                    <div className={menuOpen ? "lineTop spin" : "lineTop"}></div>
-                    <div className={menuOpen ? "lineMiddle slide-out" : "lineMiddle"}></div>
-                    <div className={menuOpen ? "lineBottom spin" : "lineBottom"}></div>
-                  </div>
-                </div>
+                <HamburgerMenu onClick={() => setMenuOpen(!menuOpen)} menuOpen={menuOpen} />
               </div>
             </div>
           <div 
