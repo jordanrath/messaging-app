@@ -8,11 +8,12 @@ rate limiting on messages in chat
 ---profanity filter username
 ---hook up form submit
 expiring messages
-static welcome message
+---static welcome message
 --light mode
 add emoji bar
 add first name to contact form
 ---enable google auth
 ---optimize contact for mobile 
-change styles of input in dm for login and register
+--change styles of input in dm for login and register
 add box shadows
+check register.js to set names correctly

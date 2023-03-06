@@ -5,7 +5,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 const Message = ({ message }) => {
     const [user] = useAuthState(auth);
 
-    // {splitRegex: /(?:(?=[a-zA-Z0-9]))(?<![a-zA-Z0-9])|(?<=[a-zA-Z0-9])(?![a-zA-Z0-9])/}
     const Filter = require('bad-words'),
         filter = new Filter();
         filter.removeWords('hell', 'butt', 'poop', 'fart');

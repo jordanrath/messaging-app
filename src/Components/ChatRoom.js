@@ -10,7 +10,7 @@ import { db } from '../Firebase';
 import Message from './Message';
 import SendMessage from './SendMessage';
 import Menu from './Menu';
-// import WelcomeMessage from './WelcomeMessage';
+import WelcomeMessage from './WelcomeMessage';
 
 const ChatRoom = () => {
   const [messages, setMessages] = useState([]);
@@ -43,7 +43,7 @@ const ChatRoom = () => {
         <Menu showMenu={true} />
         <main className='chat-box'>
           <div className='message-wrapper'>
-            
+           <WelcomeMessage /> 
             {messages?.map((message) => (
               <Message key={message.id} message={message} />
             ))}

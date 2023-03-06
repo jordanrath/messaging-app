@@ -11,7 +11,8 @@ import Menu from './Menu';
 const Register = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [name, setName] = useState("");
+    const [firstName, setFirstName] = useState("");
+    const [lastName, setLastName] = useState("")
     const [user, loading] = useAuthState(auth);
     const navigate = useNavigate();
 
@@ -19,11 +20,11 @@ const Register = () => {
         filter = new Filter();
 
     const register = () => {
-        if (filter.isProfane(name)) {
+        if (filter.isProfane(firstName || lastName)) {
             alert("Please enter a more appropriate name")
-        } else if (!name) {
+        } else if (!firstName) {
             alert("Please enter name")
-        } else registerWithEmailAndPassword(name, email, password);
+        } else registerWithEmailAndPassword(firstName, email, password);
     };
 
     useEffect(() => {
@@ -39,9 +40,16 @@ const Register = () => {
                 <input 
                     type='text'
                     className='register__textbox'
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}
-                    placeholder='Full Name'
+                    value={firstName}
+                    onChange={(event) => setFirstName(event.target.value)}
+                    placeholder='First Name'
+                />
+                <input 
+                    type='text'
+                    className='register__textbox'
+                    value={lastName}
+                    onChange={(event) => setLastName(event.target.value)}
+                    placeholder='Last Name'
                 />
                 <input 
                     type='text'
