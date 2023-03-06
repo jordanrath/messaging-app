@@ -8,7 +8,7 @@ library.add(fab, faFacebookF, faInstagram, faTwitter, faLinkedinIn);
 const Contact = () => {
   return (
     <>
-        <Menu />
+        <Menu showMenu={true} />
         <div className="contact-section__container">
                 <section className='contact-section' id='contact' data-aos='zoom-in-up'>
                     <div className="contact-section__title">

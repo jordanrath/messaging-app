@@ -40,7 +40,7 @@ const ChatRoom = () => {
 
     return (
       <div className='chatroom'>  
-        <Menu />
+        <Menu showMenu={true} />
         <main className='chat-box'>
           <div className='message-wrapper'>
             

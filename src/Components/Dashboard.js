@@ -34,7 +34,7 @@ const Dashboard = () => {
 
   return (
     <>
-      <Menu />
+      <Menu showMenu={true} />
       <div className="dashboard">
         <div className="dashboard__title">
           <h2>Welcome to your Chatroom</h2>

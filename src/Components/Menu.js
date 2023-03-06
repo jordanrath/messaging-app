@@ -4,7 +4,8 @@ import HamburgerMenu from './HamburgerMenu';
 import Logout from './Logout';
 import ThemeButton from './ThemeButton';
 
-const Menu = () => {
+const Menu = (props) => {
+    const { showMenu } = props;
     const [menuOpen, setMenuOpen] = useState(false);
 
   return (
@@ -16,7 +17,7 @@ const Menu = () => {
                 <div className="theme-btn__container">
                   <ThemeButton />
                 </div>
-                <HamburgerMenu onClick={() => setMenuOpen(!menuOpen)} menuOpen={menuOpen} />
+                <HamburgerMenu onClick={() => setMenuOpen(!menuOpen)} menuOpen={menuOpen} showMenu={showMenu} />
               </div>
             </div>
           <div 

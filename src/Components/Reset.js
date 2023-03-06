@@ -17,7 +17,7 @@ const Reset = () => {
 
   return (
     <>
-        <Menu />
+        <Menu showMenu={true} />
         <div className='reset'>
             <div className='reset__container'>
                 <input 
