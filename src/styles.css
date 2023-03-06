@@ -1119,6 +1119,24 @@ button {
   .login__container {
     width: unset;
   }
+
+  .dashboard {
+    height: calc(100vh + 70px);
+  }
+
+  .dashboard__container {
+    gap: 30px;
+  }
+
+  .dashboard__btn {
+    width: 200px;
+    height: 75px;
+    font-size: 15px;
+  }
+
+  .dashboard__btn span {
+    font-size: 35px;
+  }
 }
 
 @media screen and (max-width: 550px) {
