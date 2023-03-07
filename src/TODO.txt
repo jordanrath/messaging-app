@@ -9,6 +9,7 @@ add first name to contact form
 add box shadows
 check register.js to set names correctly
 create thank you menu for contact form
+add apple sign in and style buttons with icons
 ---adding color to contact info
 ---profanity filter in chatroom
 ---profanity filter username

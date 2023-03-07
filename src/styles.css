@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Ubuntu:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
 #root {
   width: 100vw;
@@ -37,7 +38,7 @@ html {
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   scroll-behavior: smooth;
 }
 
@@ -48,7 +49,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 16px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: var(--background-dm);
   scroll-behavior: smooth;
 }
@@ -132,7 +133,7 @@ input[type=password],
   height: 40px;
   font-size: 20px;
   color: var(--on-primary);
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   margin: 0;
   transition: all 0.8s;
@@ -192,11 +193,29 @@ input[type=email],
 }
 
 .login__google {
-  background-color: var(--secondary-variant);
+  /* height: 40px; */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  padding: .2px;
+  font-family: 'Roboto', sans-serif;
+  color: var(--on-primary);
+  background-color: #4285F4;
+}
+
+img {
+  height: 42px;
 }
 
 .login div {
   margin-top: 7px;
+  color: var(--on-primary);
+}
+
+.light-mode .login div {
+  color: var(--on-secondary);
 }
 
 /* ---------------Register Styles--------------- */
@@ -414,7 +433,7 @@ ul.menu__links li a {
   font-size: 40px;
   top: 0;
   transition: all 2s cubic-bezier(0.16, 1, 0.3, 1);
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .menu__item__wrapper {
@@ -448,13 +467,13 @@ ul.menu__links li a {
   width: 100%;
   padding-bottom: 30px;
   color: var(--background-lm);
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 25px;
 }
 
 .dashboard h4 {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 
@@ -484,7 +503,7 @@ ul.menu__links li a {
   border-radius: 6px;
   color: var(--background-lm);
   background-color: var(--background);
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   cursor: pointer;
   transition: all 0.5s;
@@ -625,7 +644,7 @@ ul.menu__links li a {
   background-color: var(--background-secondary-dm);
   color: var(--background-lm);
   font-size: 1rem;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 .send-message > input:placeholder {
   color: var(--background-lm);
@@ -633,7 +652,7 @@ ul.menu__links li a {
 .send-message > :is(input, button):focus {
   outline: none;
   border-bottom: 1px solid #03DAC6;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .send-message__button-container {
@@ -657,7 +676,7 @@ ul.menu__links li a {
   background: transparent;
   transition: all 0.3s ease;
   font-weight: 600;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .send-message__button::after {
@@ -720,7 +739,7 @@ ul.menu__links li a {
   align-items: center;
   padding-top: 30px;
   font-size: 45px;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 
@@ -729,7 +748,7 @@ ul.menu__links li a {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   padding-bottom: 60px;
 }
@@ -750,7 +769,7 @@ ul.menu__links li a {
   gap: 50px;
   background-color: var(--primary);
   color: var(--on-primary);
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   border-radius: 6px;
   padding: 30px;
@@ -875,7 +894,7 @@ select:-webkit-autofill:focus {
   height: 40px;
   font-size: 20px;
   color: var(--on-primary);
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   margin: 0;
   transition: all 0.8s;
@@ -900,7 +919,7 @@ select:-webkit-autofill:focus {
   text-overflow: ellipsis;
   font-size: 20px;
   color: var(--on-primary);
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   margin: 0;
   transition: all 0.8s;
@@ -923,7 +942,7 @@ select:-webkit-autofill:focus {
   display: inherit;
   justify-content: center;
   align-items: center;
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 900;
   font-size: 20px;
   height: 50px;
@@ -1104,7 +1123,8 @@ button {
 }
 
 .light-mode .login__google {
-  background-color: var(--secondary-variant);
+  background-color: #4285F4;
+  color: var(--on-primary);
 }
 
 /* ---------------Light Mode Register Styles--------------- */

@@ -57,7 +57,9 @@ const Login = () => {
                         setAuthStatus(authStatuses.signingIn);
                     }}
                 >
-                    Login with Google   
+                    <img className='icon__google' src='../icons/btn_google_light_normal_ios.svg' alt='Google Logo'/>
+                    Sign in with Google  
+                    {/* <img className='icon__google' src='/icons/btn_google_signin_light_normal_web@2x.png' alt='Google Logo'/> */}
                 </button>
                 <div>
                     <Link to="/reset">Forgot Password</Link>
