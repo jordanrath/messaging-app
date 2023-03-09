@@ -12,7 +12,9 @@ const Menu = (props) => {
       <div className="menu">
         <div className="menu__container">
           <div className="menu__nav">
-            <div className="logo">The ChatRoom</div>
+            <div className="logo">
+              The ChatRoom
+            </div>
             <div className="menu__side">
                 <div className="theme-btn__container">
                   <ThemeButton />

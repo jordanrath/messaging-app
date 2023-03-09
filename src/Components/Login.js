@@ -59,7 +59,29 @@ const Login = () => {
                 >
                     <img className='icon__google' src='./icons/btn_google_light_normal_ios.svg' alt='Google Logo'/>
                     Sign in with Google  
-                    {/* <img className='icon__google' src='/icons/btn_google_signin_light_normal_web@2x.png' alt='Google Logo'/> */}
+                </button>
+                <button 
+                    className='login__btn login__google'
+                    onClick={() => {
+                        signInWithGoogle();
+                        setAuthStatus(authStatuses.signingIn);
+                    }}
+                >
+                    <div
+                      id="appleid-signin"
+                      data-mode="center-align"
+                      data-type="sign-in"
+                      data-color="black"
+                      data-border="false"
+                      data-border-radius="15"
+                      data-width="268"
+                      data-height="40"
+                      data-logo-size="medium"
+                      data-logo-position="15"
+                      data-label-position="70"
+                    ></div>
+                    <img className='icon__apple' src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js" alt='Apple Logo' />
+                    Sign in with Apple
                 </button>
                 <div>
                     <Link to="/reset">Forgot Password</Link>

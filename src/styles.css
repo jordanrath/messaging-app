@@ -205,6 +205,11 @@ input[type=email],
   background-color: #4285F4;
 }
 
+.login__apple {
+  width: 210px;
+  height: 40px;
+}
+
 img {
   height: 42px;
 }
@@ -871,8 +876,25 @@ select:-webkit-autofill,
 select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   /* border: none; */
+  font-size: 20px;
   -webkit-text-fill-color: var(--on-primary);
   -webkit-box-shadow: 0 0 0px 1000px var(--background-secondary) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input:autofill,
+input:autofill:hover, 
+input:autofill:focus,
+textarea:autofill,
+textarea:autofill:hover,
+textarea:autofill:focus,
+select:autofill,
+select:autofill:hover,
+select:autofill:focus {
+  /* border: none; */
+  font-size: 20px;
+  color: var(--on-primary);
+  box-shadow: 0 0 0px 1000px var(--background-secondary) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
