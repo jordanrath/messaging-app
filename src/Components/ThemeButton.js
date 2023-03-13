@@ -12,11 +12,11 @@ const ThemeButton = () => {
         <ThemeContext.Consumer>
             {({ changeTheme }) => (
               <button
-              className='theme-btn'
+                className='theme-btn'
                 onClick={() => {
-                  setDarkMode(!darkMode); 
-                  changeTheme(darkMode ? themes.dark : themes.light);
-                }}
+                setDarkMode(!darkMode); 
+                changeTheme(darkMode ? themes.dark : themes.light);
+              }}
                 // style={{
                 //   transitionDelay: lm ? "0.8s" : "0s",
                 // }}

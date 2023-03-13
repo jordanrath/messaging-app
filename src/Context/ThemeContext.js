@@ -10,4 +10,4 @@ const ThemeContext = createContext({
     changeTheme: () => {},
 });
 
-export { ThemeContext, themes }
+export { ThemeContext, themes };
