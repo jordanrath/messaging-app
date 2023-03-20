@@ -60,7 +60,7 @@ const Login = () => {
                     <img className='icon__google' src='./icons/btn_google_light_normal_ios.svg' alt='Google Logo'/>
                     Sign in with Google  
                 </button>
-                <button 
+                {/* <button 
                     className='login__btn login__google'
                     onClick={() => {
                         signInWithGoogle();
@@ -82,7 +82,7 @@ const Login = () => {
                     ></div>
                     <img className='icon__apple' src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js" alt='Apple Logo' />
                     Sign in with Apple
-                </button>
+                </button> */}
                 <div>
                     <Link to="/reset">Forgot Password</Link>
                 </div>

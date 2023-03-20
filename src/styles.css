@@ -13,7 +13,7 @@
   margin: 0;
   padding: 0;
   --primary: #BB86FC;
-  --primary-lm: #6200EE;
+  --primary-lm: #0085FF;
   --primary-variant: #3700B3;
   --secondary: #03DAC6;
   --secondary-variant: #018786;
@@ -26,6 +26,8 @@
   --background-scroll-lm: #777777;
   --on-primary: #FFFFFF;
   --on-secondary: #000000;
+  --on-toggle-lm: #d3a0fa;
+  --on-toggle-dm: #ffdaa5;
   --on-error: #FFFFFF;
   --error-dm: #CF6679;
   --error-lm: #B00020;
@@ -55,20 +57,13 @@ body {
 }
 
 /* --------------Theme Toggle Styles--------------- */
-.theme-btn {
-  background-color: var(--background-dm);
+button.theme-toggle.theme-toggle {
+  font-size: 30px;
+  color: var(--on-toggle-dm);
 }
 
-.theme__toggle {
-  color: var(--on-primary);
-}
-
-.light-mode .theme__toggle {
-  color: var(--on-primary);
-}
-
-.light-mode .theme-btn {
-  background-color: var(--primary-lm);
+.light-mode button.theme-toggle.theme-toggle {
+  color: var(--on-toggle-lm);
 }
 
 /* --------------General & Icon Styles--------------- */
@@ -136,7 +131,7 @@ input[type=password],
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   margin: 0;
-  transition: all 0.8s;
+  /* transition: all 0.8s; */
 }
 
 input[type=email]:focus-visible,
@@ -919,7 +914,7 @@ select:autofill:focus {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   margin: 0;
-  transition: all 0.8s;
+  /* transition: all 0.8s; */
 }
 
 .contact__form-title textarea[id=message] {
@@ -944,7 +939,7 @@ select:autofill:focus {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   margin: 0;
-  transition: all 0.8s;
+  /* transition: all 0.8s; */
 }
 
 .contact__form-title input[type=text]:focus-visible,
@@ -965,7 +960,6 @@ select:autofill:focus {
   justify-content: center;
   align-items: center;
   font-family: 'Roboto', sans-serif;
-  font-weight: 900;
   font-size: 20px;
   height: 50px;
   width: 200px;
@@ -1252,11 +1246,11 @@ button {
 } 
 
 .light-mode .dashboard__container {
-  border-top: 2px solid var(--primary-variant);
+  border-top: 2px solid var(--secondary);
 }
 
 .light-mode .dashboard__btn {
-  background-color: var(--secondary-variant);
+  background-color: var(--primary-lm);
 }
 
 .light-mode .dashboard__btn:hover {
@@ -1329,7 +1323,7 @@ button {
 }
 
 .light-mode .material-symbols-outlined.icon__filled {
-  color: var(--primary);
+  color: var(--secondary);
 }
 
 .light-mode .contact__btn:hover {

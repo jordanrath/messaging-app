@@ -1,28 +1,26 @@
 import React, { useState } from 'react'
 import { ThemeContext, themes } from '../Context/ThemeContext';
+import "@theme-toggles/react/css/Within.css"
+import { Within } from "@theme-toggles/react"
 
 const ThemeButton = () => {
     const [darkMode, setDarkMode] = useState(false);
 
-    const lm = <span className="material-symbols-outlined icon__bold">light_mode</span>; 
-    const dm =  <span className="material-symbols-outlined icon__bold">dark_mode</span>;
+    // const lm = <span className="material-symbols-outlined icon__bold">light_mode</span>; 
+    // const dm =  <span className="material-symbols-outlined icon__bold">dark_mode</span>;
 
   return (
     <>
         <ThemeContext.Consumer>
             {({ changeTheme }) => (
-              <button
+              <div
                 className='theme-btn'
                 onClick={() => {
                 setDarkMode(!darkMode); 
                 changeTheme(darkMode ? themes.dark : themes.light);
-              }}
-                // style={{
-                //   transitionDelay: lm ? "0.8s" : "0s",
-                // }}
-              >
-                <span className='theme__toggle'>{darkMode ? dm : lm}</span>
-              </button>
+              }}>
+                <Within duration={750} />
+              </div>
             )}
         </ThemeContext.Consumer>
     </>
