@@ -1,25 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { ThemeContext, themes } from '../Context/ThemeContext';
 import "@theme-toggles/react/css/Within.css"
 import { Within } from "@theme-toggles/react"
 
 const ThemeButton = () => {
-    //const [darkMode, setDarkMode] = useState(false);
-    // const [isToggled, setToggle] = useState(false);
-    // const {theme} = ThemeContext;
-    // const [theme, setTheme] = useState(themes.dark);
-    
-    //  useEffect(() => {
-    //    setDarkMode(JSON.parse(window.sessionStorage.getItem('darkMode')))
-    //  }, [])
-    //  useEffect(() => {
-    //    window.sessionStorage.setItem('darkMode', darkMode);
-    //  })  
-
-    // useEffect(() => {
-    //   setTheme(darkMode ? themes.dark : themes.light)
-    // }, [darkMode])
-
 
   return (
     <>

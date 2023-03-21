@@ -24,7 +24,14 @@ const ThemeProvider = (props) => {
     }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ theme: theme, changeTheme: changeTheme, isToggled: isToggled, setToggle: setToggle, darkMode: darkMode, setDarkMode: setDarkMode }}>
+    <ThemeContext.Provider value={{ 
+        theme: theme, 
+        changeTheme: changeTheme, 
+        isToggled: isToggled, 
+        setToggle: setToggle, 
+        darkMode: darkMode, 
+        setDarkMode: setDarkMode 
+    }}>
         {props.children}
     </ThemeContext.Provider>
   );
