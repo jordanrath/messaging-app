@@ -11,7 +11,7 @@ const Menu = (props) => {
   return (
       <div className="menu">
         <div className="menu__container">
-          <div className="menu__nav">
+          <div className="menu__nav" data-aos="zoom-in-down" data-aos-duration="750" data-aos-delay="500">
             <div className="logo">
               The ChatRoom
             </div>
