@@ -71,6 +71,10 @@ a {
   color: var(--error-dm);
 }
 
+h2 {
+  font-weight: 400;
+}
+
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
