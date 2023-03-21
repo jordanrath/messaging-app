@@ -4,6 +4,8 @@ import { ThemeContext, themes } from './ThemeContext';
 
 const ThemeProvider = (props) => {
     const [theme, setTheme] = useState(themes.dark);
+    const [isToggled, setToggle] = useState(false);
+    const [darkMode, setDarkMode] = useState(false);
 
     const changeTheme = (theme) => {
         setTheme(theme);
@@ -22,7 +24,7 @@ const ThemeProvider = (props) => {
     }, [theme]);
 
   return (
-    <ThemeContext.Provider value={{ theme: theme, changeTheme: changeTheme }}>
+    <ThemeContext.Provider value={{ theme: theme, changeTheme: changeTheme, isToggled: isToggled, setToggle: setToggle, darkMode: darkMode, setDarkMode: setDarkMode }}>
         {props.children}
     </ThemeContext.Provider>
   );
