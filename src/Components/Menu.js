@@ -11,11 +11,11 @@ const Menu = (props) => {
   return (
       <div className="menu">
         <div className="menu__container">
-          <div className="menu__nav" data-aos="zoom-in-down" data-aos-duration="750" data-aos-delay="500">
-            <div className="logo">
+          <div className="menu__nav">
+            <div className="logo" data-aos="zoom-in-down" data-aos-duration="750" data-aos-delay="500">
               The ChatRoom
             </div>
-            <div className="menu__side">
+            <div className="menu__side" data-aos="zoom-in-down" data-aos-duration="750" data-aos-delay="500">
                 <div className="theme-btn__container">
                   <ThemeButton />
                 </div>
