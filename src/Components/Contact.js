@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Menu from './Menu';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fab, faFacebookF, faInstagram, faTwitter, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 
 library.add(fab, faFacebookF, faInstagram, faTwitter, faLinkedinIn);
+
 const Contact = () => {
+    const [characters, setCharacters] = useState(0);
+
   return (
     <>
         <Menu showMenu={true} />
@@ -50,14 +53,14 @@ const Contact = () => {
                         <form className='contact__form' action="https://formsubmit.co/rath.jordan@icloud.com" method="POST">
                             <div className="contact__form-title">
                                 <p>First Name</p>
-                                <label>
-                                    <input type='text' id='name' placeholder='John' name='name' required />
+                                <label htmlFor='fname'>
+                                    <input type='text' id='fname' placeholder='John' name='fname' required />
                                 </label>
                             </div>
                             <div className="contact__form-title">
                                 <p>Last Name</p>
-                                <label>
-                                    <input type='text' id='name' placeholder='Doe' name='name' required />
+                                <label htmlFor='lname'>
+                                    <input type='text' id='lname' placeholder='Doe' name='lname' required />
                                 </label>
                             </div>
                             <div className="contact__form-title">
@@ -75,7 +78,8 @@ const Contact = () => {
                             <div className="contact__form-title">
                                 <p>Message</p>
                                 <label>
-                                    <textarea id='message' name='message' placeholder='Write us a message...' required />
+                                    <textarea maxLength={500} id='message' name='message' placeholder='Write us a message...'  onChange={(e) => setCharacters(e.currentTarget.value.length)}required />
+                                    <p>{characters === 0 ? "" : `${characters}/500`}</p>
                                 </label>
                             </div>
                             <div className='contact__btn-container'>

@@ -648,6 +648,7 @@ ul.menu__links li a {
   background-color: var(--background-secondary);
   display: flex;
 }
+
 .send-message > input {
   height: 40px;
   padding: 10px 10px;
@@ -659,13 +660,25 @@ ul.menu__links li a {
   font-size: 1rem;
   font-family: 'Roboto', sans-serif;
 }
+
 .send-message > input:placeholder {
   color: var(--background-lm);
 }
+
 .send-message > :is(input, button):focus {
   outline: none;
   border-bottom: 1px solid #03DAC6;
   font-family: 'Roboto', sans-serif;
+}
+
+.send-message > :is(input, button):focus p {
+  color: red;
+}
+
+.send-message p {
+  background-color: var(--background-secondary-dm);
+  color: var(--background-scroll-lm);
+  padding-top: 10px;
 }
 
 .send-message__button-container {
@@ -883,9 +896,14 @@ ul.menu__links li a {
 .contact__form label {
   display: flex;
   justify-content: flex-start;
+  align-items: baseline;
   flex-grow: 1;
   flex-shrink: 0;
   color: var(--on-primary);
+}
+
+.contact__form-title label p {
+  color: var(--background-scroll-lm);
 }
 
 input:-webkit-autofill,
@@ -1263,6 +1281,16 @@ button {
   color: var(--on-secondary);
 }
 
+.light-mode .send-message input[type=text]:focus-visible {
+  border-bottom: 1px solid var(--secondary);
+}
+
+.light-mode .send-message p {
+  background-color: var(--background-lm);
+  color: var(--background-scroll-lm);
+}
+
+
 /* ---------------Light Mode Dashboard Styles--------------- */
 .light-mode .dashboard {
   background-color: var(--background-lm);
@@ -1282,6 +1310,23 @@ button {
 
 .light-mode .dashboard__btn:hover {
   background-color: var(--primary-lm);
+}
+
+.light-mode .modal__content {
+  background-color: var(--background-lm);
+  color: var(--on-secondary);
+  box-shadow:
+  0 -2.5px 2.2px rgba(0, 0, 0, 0.04),
+  0 -8.4px 13px rgba(0, 0, 0, 0.05),
+  0 -2px 8px rgba(0, 0, 0, 0.16),
+  0 12px 12px rgba(0, 0, 0, 0.078),
+  0 23px 13px rgba(0, 0, 0, 0.086),
+  0 18px 7px rgba(0, 0, 0, 0.13);
+}
+
+.light-mode .modal__content h4,
+.light-mode .modal__content p {
+  color: var(--on-secondary);
 }
 
 /* ---------------Light Mode Scrollbar Styles--------------- */
