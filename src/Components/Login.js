@@ -61,9 +61,9 @@ const Login = () => {
                     Sign in with Google  
                 </button>
                 {/* <button 
-                    className='login__btn login__google'
+                    className='login__btn login__apple'
                     onClick={() => {
-                        signInWithGoogle();
+                        signInWithApple();
                         setAuthStatus(authStatuses.signingIn);
                     }}
                 >
@@ -83,6 +83,21 @@ const Login = () => {
                     <img className='icon__apple' src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js" alt='Apple Logo' />
                     Sign in with Apple
                 </button> */}
+                <div 
+                id="appleid-signin" 
+                className="signin-button" 
+                data-color="white" 
+                data-border="true" 
+                data-type="sign-in"
+                data-mode="center-align"
+                data-border-radius="15"
+                data-width="268"
+                data-height="40"
+                data-logo-size="medium"
+                data-logo-position="15"
+                data-label-position="70"
+                ></div>
+                <script type="text/javascript" src="https://appleid.cdn-apple.com/appleauth/static/jsapi/appleid/1/en_US/appleid.auth.js"></script>
                 <div>
                     <Link to="/reset">Forgot Password</Link>
                 </div>

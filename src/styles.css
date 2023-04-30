@@ -192,6 +192,11 @@ input[type=email],
   cursor: pointer;
 }
 
+.signin-button {
+  width: 210px;
+  height: 40px;
+}
+
 .login__google {
   /* height: 40px; */
   display: flex;
